@@ -1,6 +1,6 @@
 # Hermetica Ruby client
 
-Generated from the Hermetica OpenAPI spec (2041 operations). Ruby 3.0+, standard library only (net/http, json).
+Generated from the Hermetica OpenAPI spec (2042 operations). Ruby 3.0+, standard library only (net/http, json).
 
 ## Install
 

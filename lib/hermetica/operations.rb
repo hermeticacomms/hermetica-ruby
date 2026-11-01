@@ -9830,6 +9830,11 @@ module Hermetica
       request('PUT', '/v1/integrations/connections/{id}/declarative/push', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/integrations/connections/{id}/declarative/webhook-secret - Save the signing secret the vendor shows only after it verified the webhook URL (e.g. Clover X-Clover-Auth); it is never returned
+    def put_v1_integrations_connections_by_id_declarative_webhook_secret(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/integrations/connections/{id}/declarative/webhook-secret', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/integrations/secrets/{name} - Create or replace a secret
     def put_v1_integrations_secrets_by_name(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/integrations/secrets/{name}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
