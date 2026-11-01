@@ -1,6 +1,6 @@
 # Hermetica Ruby client
 
-Generated from the Hermetica OpenAPI spec (2038 operations). Ruby 3.0+, standard library only (net/http, json).
+Generated from the Hermetica OpenAPI spec (2041 operations). Ruby 3.0+, standard library only (net/http, json).
 
 ## Install
 
@@ -34,13 +34,18 @@ hm.paginate(:get_v1_profiles).first(10) # an Enumerator without a block
 
 ## Idempotency
 
-Every non-GET call sends an `Idempotency-Key` (a random UUID unless you pass `idempotency_key:`). The client does not retry on its
-own; when you retry a failed call, pass the same key so the action never runs twice.
+Every non-GET call sends an `Idempotency-Key` (a random UUID unless you pass `idempotency_key:`).
+
+## Retries
+
+Network errors, 429 and 5xx are retried automatically with exponential backoff and jitter, honouring `Retry-After`. Every attempt of
+a call sends the same `Idempotency-Key`, so a retried write never runs twice. `Client.new(..., max_retries: 3)` is the default;
+`max_retries: 0` turns retries off. When you retry a failed call yourself, pass the same `idempotency_key:`.
 
 ## Errors
 
 Any non-2xx answer raises `Hermetica::Error` with `status`, `code`, `error_message` and `details` (`message` is
-"status code: error_message"). Network failures raise the usual Net::HTTP / Socket errors.
+"status code: error_message"). Network failures, once retries run out, raise the usual Net::HTTP / Socket errors.
 
 ```ruby
 begin

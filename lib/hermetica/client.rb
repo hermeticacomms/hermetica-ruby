@@ -3,6 +3,7 @@
 require "json"
 require "net/http"
 require "securerandom"
+require "time"
 require "uri"
 require_relative "operations"
 
@@ -24,13 +25,18 @@ module Hermetica
   class Client
     include Operations
 
-    attr_reader :api_key, :base_url, :workspace_id, :timeout
+    # Network errors and timeouts (Net::OpenTimeout and Net::ReadTimeout are Timeout::Errors).
+    NETWORK_ERRORS = [IOError, SystemCallError, SocketError, Timeout::Error].freeze
 
-    def initialize(api_key, base_url: "http://localhost:4000", workspace_id: nil, timeout: 30)
+    attr_reader :api_key, :base_url, :workspace_id, :timeout, :max_retries
+
+    # `max_retries:` is how many times a network error, 429 or 5xx is retried after the first attempt; 0 turns retries off.
+    def initialize(api_key, base_url: "http://localhost:4000", workspace_id: nil, timeout: 30, max_retries: 3)
       @api_key = api_key
       @base_url = base_url.sub(%r{/+\z}, "")
       @workspace_id = workspace_id
       @timeout = timeout
+      @max_retries = max_retries
     end
 
     def request(method, path, path_params: nil, query: nil, body: nil, idempotency_key: nil)
@@ -51,12 +57,7 @@ module Hermetica
       end
       # a retry with the same key never repeats the action
       req["Idempotency-Key"] = idempotency_key.to_s.empty? ? SecureRandom.uuid : idempotency_key if method != "GET"
-      res = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https", open_timeout: @timeout, read_timeout: @timeout) { |http| http.request(req) }
-      text = res.body.to_s
-      status = res.code.to_i
-      raise error_for(status, text) if status >= 300
-
-      text.empty? ? nil : JSON.parse(text)
+      send_with_retries(uri, req)
     end
 
     # Yields every item of a list operation, following `nextCursor`. `operation` is the method name, e.g. :get_v1_profiles.
@@ -77,6 +78,49 @@ module Hermetica
     end
 
     private
+
+    # Every call is safe to replay: a GET, or a non-GET carrying the same Idempotency-Key on every attempt.
+    def send_with_retries(uri, req)
+      attempt = 0
+      loop do
+        begin
+          res = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https", open_timeout: @timeout, read_timeout: @timeout) { |http| http.request(req) }
+        rescue *NETWORK_ERRORS
+          raise if attempt >= @max_retries
+
+          sleep(backoff(attempt))
+          attempt += 1
+          next
+        end
+        status = res.code.to_i
+        if (status == 429 || status >= 500) && attempt < @max_retries
+          sleep(retry_after(res["Retry-After"]) || backoff(attempt))
+          attempt += 1
+          next
+        end
+        text = res.body.to_s
+        raise error_for(status, text) if status >= 300
+
+        return text.empty? ? nil : JSON.parse(text)
+      end
+    end
+
+    # Full jitter: a random wait up to 0.25 s * 2^attempt, capped at 8 s.
+    def backoff(attempt)
+      rand * [8.0, 0.25 * (2**attempt)].min
+    end
+
+    # Retry-After as delta-seconds or an HTTP date, in seconds; nil when absent or unparseable.
+    def retry_after(value)
+      return nil if value.nil? || value.empty?
+
+      secs = Float(value, exception: false)
+      return [secs, 0.0].max if secs
+
+      [Time.httpdate(value) - Time.now, 0.0].max
+    rescue ArgumentError
+      nil
+    end
 
     def escape_path(value)
       URI.encode_www_form_component(value.to_s).gsub("+", "%20") # form encoding turns spaces into "+"; a literal "+" is already %2B

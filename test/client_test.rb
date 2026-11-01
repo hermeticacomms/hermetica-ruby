@@ -22,8 +22,11 @@ class ClientTest < Minitest::Test
 
     def request(req)
       @requests << req
-      code, body = @responses.shift
+      code, body, headers = @responses.shift
+      raise code if code.is_a?(Class)
+
       res = Net::HTTPResponse::CODE_TO_OBJ.fetch(code.to_s).new("1.1", code.to_s, "")
+      (headers || {}).each { |k, v| res[k] = v }
       res.instance_variable_set(:@body, body)
       res.instance_variable_set(:@read, true)
       res
@@ -82,8 +85,54 @@ class ClientTest < Minitest::Test
 
   def test_non_json_error_falls_back_to_http_error
     err = nil
-    with_http([502, "Bad gateway"]) { err = assert_raises(Hermetica::Error) { client.request("DELETE", "/v1/x") } }
+    with_http([502, "Bad gateway"]) { err = assert_raises(Hermetica::Error) { client(max_retries: 0).request("DELETE", "/v1/x") } }
     assert_equal [502, "http_error", "Bad gateway", nil], [err.status, err.code, err.error_message, err.details]
+  end
+
+  def test_retries_5xx_429_and_network_errors_with_the_same_key
+    out = nil
+    fake = with_http([503, "", { "Retry-After" => "0" }], [429, "", { "Retry-After" => "0" }], [Errno::ECONNRESET], [200, '{"ok":true}']) do
+      out = client.request("POST", "/v1/x", body: { "a" => 1 })
+    end
+    assert_equal({ "ok" => true }, out)
+    assert_equal 4, fake.requests.size
+    keys = fake.requests.map { |r| r["Idempotency-Key"] }
+    assert_equal 1, keys.uniq.size
+    refute_nil keys.first
+    assert_equal ['{"a":1}'] * 4, fake.requests.map(&:body)
+  end
+
+  def test_gives_up_after_max_retries
+    err = nil
+    fake = with_http([502, "a", { "Retry-After" => "0" }], [502, "b", { "Retry-After" => "0" }]) do
+      err = assert_raises(Hermetica::Error) { client(max_retries: 1).request("GET", "/v1/x") }
+    end
+    assert_equal [502, "b"], [err.status, err.error_message]
+    assert_equal 2, fake.requests.size
+  end
+
+  def test_does_not_retry_4xx
+    fake = with_http([404, "{}"], [200, "{}"]) do
+      assert_raises(Hermetica::Error) { client.request("GET", "/v1/x") }
+    end
+    assert_equal 1, fake.requests.size
+  end
+
+  def test_network_error_raises_once_retries_run_out
+    fake = with_http([Errno::ECONNREFUSED]) do
+      assert_raises(Errno::ECONNREFUSED) { client(max_retries: 0).request("GET", "/v1/x") }
+    end
+    assert_equal 1, fake.requests.size
+  end
+
+  def test_retry_after_parsing
+    c = client
+    assert_equal 2.0, c.send(:retry_after, "2")
+    assert_equal 0.0, c.send(:retry_after, "-1")
+    assert_equal 0.0, c.send(:retry_after, "Wed, 21 Oct 2015 07:28:00 GMT")
+    assert_in_delta 5.0, c.send(:retry_after, (Time.now + 5).httpdate), 1.5
+    assert_nil c.send(:retry_after, "soon")
+    assert_nil c.send(:retry_after, nil)
   end
 
   def test_paginate_follows_next_cursor
