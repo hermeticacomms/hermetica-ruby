@@ -1,0 +1,16 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+permissions: { contents: read }
+jobs:
+  test:
+    runs-on: ubuntu-24.04 # newer images have no prebuilt Ruby 3.0
+    strategy: { matrix: { ruby: ['3.0', '3.4'] } }
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with: { ruby-version: '${{ matrix.ruby }}', bundler-cache: true }
+      - run: find lib test -name '*.rb' -print0 | xargs -0 -n1 ruby -wc
+      - run: bundle exec rake test
+      - run: gem build hermeticacomms.gemspec

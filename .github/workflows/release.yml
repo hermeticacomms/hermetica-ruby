@@ -1,0 +1,25 @@
+# Push a tag matching lib/hermetica/version.rb ("v0.1.0") to publish the "hermeticacomms" gem.
+# One-time setup on rubygems.org: add a trusted publisher (a "pending trusted publisher" before the first release) for gem
+# hermeticacomms: repository hermeticacomms/hermetica-ruby, workflow release.yml, environment rubygems. No API key secret is needed:
+# rubygems/release-gem exchanges the GitHub OIDC token and pushes a Sigstore attestation with the gem.
+name: release
+on:
+  push: { tags: ['v*'] }
+permissions: { contents: read }
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: rubygems
+    permissions: { contents: write, id-token: write, attestations: write }
+    steps:
+      - uses: actions/checkout@v5
+        with: { persist-credentials: false }
+      - uses: ruby/setup-ruby@v1
+        with: { ruby-version: ruby, bundler-cache: true }
+      - run: test "v$(ruby -r ./lib/hermetica/version -e 'print Hermetica::VERSION')" = "$GITHUB_REF_NAME"
+      - run: bundle exec rake test
+      - uses: rubygems/release-gem@v1 # bundle exec rake release: builds pkg/*.gem and pushes it (the tag already exists)
+      - uses: actions/attest-build-provenance@v3
+        with: { subject-path: 'pkg/*.gem' }
+      - run: gh release create "$GITHUB_REF_NAME" pkg/*.gem --repo "$GITHUB_REPOSITORY" --generate-notes
+        env: { GH_TOKEN: '${{ github.token }}' }
