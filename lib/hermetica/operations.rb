@@ -5,6 +5,16 @@ module Hermetica
   # One method per API operation. Pass path params as `path:`, query params as `query:`, the JSON body as `body:`.
   module Operations
 
+    # DELETE /hub/{ws}/api/wishlist/{productId}
+    def delete_hub_by_ws_api_wishlist_by_product_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/hub/{ws}/api/wishlist/{productId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /mcp - Not offered: the hosted MCP server is stateless (POST only).
+    def delete_mcp(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/mcp', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /p/n/{ref}/p/{slug}/highlights/{id} - Remove one of the reader's own highlights
     def delete_pnby_ref_pby_slug_highlights_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/p/n/{ref}/p/{slug}/highlights/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -30,6 +40,11 @@ module Hermetica
       request('DELETE', '/v1/ads/audiences/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/ads/lead-syncs/{id} - Stop syncing a lead-ad form
+    def delete_v1_ads_lead_syncs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/ads/lead-syncs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/ad-spend - Remove imported spend for a platform and date range
     def delete_v1_ad_spend(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/ad-spend', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -43,6 +58,16 @@ module Hermetica
     # DELETE /v1/agency/members/{userId}
     def delete_v1_agency_members_by_user_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/agency/members/{userId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/ai-agents/{id}
+    def delete_v1_ai_agents_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/ai-agents/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/ai-agents/{id}/guidances/{guidanceId}
+    def delete_v1_ai_agents_by_id_guidances_by_guidance_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/ai-agents/{id}/guidances/{guidanceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/ai/prompt-templates/{id}
@@ -95,6 +120,16 @@ module Hermetica
       request('DELETE', '/v1/assets/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/association-labels/{id}
+    def delete_v1_association_labels_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/association-labels/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/associations/{fromType}/{fromId}/{toType}/{toId}
+    def delete_v1_associations_by_from_type_by_from_id_by_to_type_by_to_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/associations/{fromType}/{fromId}/{toType}/{toId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/attributes/computed/{key}
     def delete_v1_attributes_computed_by_key(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/attributes/computed/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -123,6 +158,11 @@ module Hermetica
     # DELETE /v1/authorized-apps/{clientId}
     def delete_v1_authorized_apps_by_client_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/authorized-apps/{clientId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/batches/{id} - Cancel: calls not yet run are skipped (one already in flight completes)
+    def delete_v1_batches_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/batches/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/blocklist/{id}
@@ -155,6 +195,11 @@ module Hermetica
       request('DELETE', '/v1/budgets/{id}/spend/{spendId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/calendar-feeds/{id}
+    def delete_v1_calendar_feeds_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/calendar-feeds/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/calendar/mine/{id}
     def delete_v1_calendar_mine_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/calendar/mine/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -175,6 +220,11 @@ module Hermetica
       request('DELETE', '/v1/campaigns/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/campaigns/{id}/audiences/{audienceId}
+    def delete_v1_campaigns_by_id_audiences_by_audience_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/campaigns/{id}/audiences/{audienceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/campaigns/{id}/feedback/{feedbackId}
     def delete_v1_campaigns_by_id_feedback_by_feedback_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/campaigns/{id}/feedback/{feedbackId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -183,6 +233,11 @@ module Hermetica
     # DELETE /v1/campaigns/{id}/messages/{messageId}
     def delete_v1_campaigns_by_id_messages_by_message_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/campaigns/{id}/messages/{messageId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/campaigns/{id}/messages/{messageId}/variants/{key}
+    def delete_v1_campaigns_by_id_messages_by_message_id_variants_by_key(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/campaigns/{id}/messages/{messageId}/variants/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/campaigns/{id}/permanent
@@ -285,6 +340,11 @@ module Hermetica
       request('DELETE', '/v1/content-slots/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/content-slots/pushes/{id} - Withdraw pushed content (the slot falls back to its rules)
+    def delete_v1_content_slots_pushes_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/content-slots/pushes/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/coupon-pools/{id}
     def delete_v1_coupon_pools_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/coupon-pools/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -345,6 +405,16 @@ module Hermetica
       request('DELETE', '/v1/deliverability/sources/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/destinations/{id}
+    def delete_v1_destinations_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/destinations/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/do-not-contact/{id}
+    def delete_v1_do_not_contact_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/do-not-contact/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/event-definitions/{name} - Remove the declaration only; stored events stay
     def delete_v1_event_definitions_by_name(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/event-definitions/{name}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -358,6 +428,11 @@ module Hermetica
     # DELETE /v1/forms/{id}
     def delete_v1_forms_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/forms/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/forms/{id}/submissions/{submissionId} - Delete one submission (the consent records it created stay as proof)
+    def delete_v1_forms_by_id_submissions_by_submission_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/forms/{id}/submissions/{submissionId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/frequency-settings/{id}
@@ -390,6 +465,11 @@ module Hermetica
       request('DELETE', '/v1/import-schedules/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/in-app-components/{id} - Delete a component
+    def delete_v1_in_app_components_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/in-app-components/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/in-app-messages/{id} - Delete an in-app message and its events
     def delete_v1_in_app_messages_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/in-app-messages/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -405,6 +485,11 @@ module Hermetica
       request('DELETE', '/v1/inbound/routes/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/inbox-messages/{id} - Withdraw an inbox message
+    def delete_v1_inbox_messages_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/inbox-messages/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/integrations/connections/{id}
     def delete_v1_integrations_connections_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/integrations/connections/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -413,6 +498,16 @@ module Hermetica
     # DELETE /v1/integrations/connections/{id}/hubspot/lists/{syncId} - Stop mirroring (the HubSpot list is left in place)
     def delete_v1_integrations_connections_by_id_hubspot_lists_by_sync_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/integrations/connections/{id}/hubspot/lists/{syncId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/integrations/crm-imports/{id}
+    def delete_v1_integrations_crm_imports_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/integrations/crm-imports/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/integrations/packages/{packageId} - Uninstall; refused while connections use it
+    def delete_v1_integrations_packages_by_package_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/integrations/packages/{packageId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/integrations/secrets/{name} - Delete a secret no endpoint uses
@@ -428,6 +523,11 @@ module Hermetica
     # DELETE /v1/jobs/{id} - Delete a finished job
     def delete_v1_jobs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/jobs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/landing-page-clusters/{id}
+    def delete_v1_landing_page_clusters_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/landing-page-clusters/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/landing-page-folders/{id} - Pages move to the root; nothing is deleted
@@ -450,6 +550,11 @@ module Hermetica
       request('DELETE', '/v1/leads/companies/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/leads/companies/{id}/files/{fileId}
+    def delete_v1_leads_companies_by_id_files_by_file_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/leads/companies/{id}/files/{fileId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/leads/companies/{id}/link/{profileId}
     def delete_v1_leads_companies_by_id_link_by_profile_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/leads/companies/{id}/link/{profileId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -458,6 +563,11 @@ module Hermetica
     # DELETE /v1/leads/companies/{id}/notes/{noteId}
     def delete_v1_leads_companies_by_id_notes_by_note_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/leads/companies/{id}/notes/{noteId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/leads/company-fields/{key}
+    def delete_v1_leads_company_fields_by_key(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/leads/company-fields/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/leads/company-lists/{id}
@@ -515,9 +625,34 @@ module Hermetica
       request('DELETE', '/v1/lists/{id}/optin-template', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/loyalty/programs/{id} - Delete a programme with its ledger (balances are lost)
+    def delete_v1_loyalty_programs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/loyalty/programs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/loyalty/programs/{id}/rewards/{subId}
+    def delete_v1_loyalty_programs_by_id_rewards_by_sub_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/loyalty/programs/{id}/rewards/{subId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/loyalty/programs/{id}/rules/{subId}
+    def delete_v1_loyalty_programs_by_id_rules_by_sub_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/loyalty/programs/{id}/rules/{subId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/loyalty/programs/{id}/tiers/{subId}
+    def delete_v1_loyalty_programs_by_id_tiers_by_sub_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/loyalty/programs/{id}/tiers/{subId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/mapped-metrics/{role} - Reset a role to its default event
     def delete_v1_mapped_metrics_by_role(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/mapped-metrics/{role}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/marketing-events/apps/{id}
+    def delete_v1_marketing_events_apps_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/marketing-events/apps/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/marketing-events/{id}
@@ -538,6 +673,11 @@ module Hermetica
     # DELETE /v1/marketing-events/by-ref/{ref}/lists/{listId}
     def delete_v1_marketing_events_by_ref_by_ref_lists_by_list_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/marketing-events/by-ref/{ref}/lists/{listId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/me/identities/{id}
+    def delete_v1_me_identities_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/me/identities/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/members/{userId}
@@ -625,7 +765,7 @@ module Hermetica
       request('DELETE', '/v1/newsletter/stripe', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # DELETE /v1/notes/{id}
+    # DELETE /v1/notes/{id} - Delete a contact or company note
     def delete_v1_notes_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/notes/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -670,14 +810,29 @@ module Hermetica
       request('DELETE', '/v1/object-types/{id}/relationships/{target}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/operator/waitlist/{id}
+    def delete_v1_operator_waitlist_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/operator/waitlist/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/outbound/ai-key
     def delete_v1_outbound_ai_key(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/outbound/ai-key', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/outbound/booking-pages/{id}
+    def delete_v1_outbound_booking_pages_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/outbound/booking-pages/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/outbound/call-dispositions/{key}
     def delete_v1_outbound_call_dispositions_by_key(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/outbound/call-dispositions/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/outbound/calls/{id}/recording - Delete the recording link and transcript of a logged call (outcome, length and notes stay)
+    def delete_v1_outbound_calls_by_id_recording(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/outbound/calls/{id}/recording', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/outbound/domain-caps/{id}
@@ -735,9 +890,39 @@ module Hermetica
       request('DELETE', '/v1/outbound/tasks/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/outbound/task-types/{id}
+    def delete_v1_outbound_task_types_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/outbound/task-types/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/outbound/telephony
+    def delete_v1_outbound_telephony(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/outbound/telephony', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/outbound/voice-clips/{id}
+    def delete_v1_outbound_voice_clips_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/outbound/voice-clips/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/page-sites/{id} - Delete the site (its pages stay, unassigned) and stop serving its domain
+    def delete_v1_page_sites_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/page-sites/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/page-sites/{id}/domain
+    def delete_v1_page_sites_by_id_domain(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/page-sites/{id}/domain', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/postal-addresses/{id} - Delete an address; lists that used it print the workspace address again
     def delete_v1_postal_addresses_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/postal-addresses/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/profile-filters/{id}
+    def delete_v1_profile_filters_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/profile-filters/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/profiles/by/{idType}/{value} - Delete a profile addressed by any identifier
@@ -758,6 +943,11 @@ module Hermetica
     # DELETE /v1/profiles/{id}/engagement - Delete a person's open and/or click history (privacy request); deliveries, bounces and consent stay
     def delete_v1_profiles_by_id_engagement(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/profiles/{id}/engagement', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/profiles/{id}/files/{fileId}
+    def delete_v1_profiles_by_id_files_by_file_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/profiles/{id}/files/{fileId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/profiles/{id}/notes/{noteId}
@@ -845,9 +1035,19 @@ module Hermetica
       request('DELETE', '/v1/segments/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/segments/{id}/members - Remove contacts from a hand-picked segment by profile id or email
+    def delete_v1_segments_by_id_members(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/segments/{id}/members', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/sender-pools/{id}
     def delete_v1_sender_pools_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/sender-pools/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/senders/{id}/signing/{kind}
+    def delete_v1_senders_by_id_signing_by_kind(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/senders/{id}/signing/{kind}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/sending-domains/{id} - Delete a sending domain (refused while senders still use it)
@@ -860,6 +1060,11 @@ module Hermetica
       request('DELETE', '/v1/send-options/{sourceKind}/{sourceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/shared-object-schemas/{id} - Stop sharing (only from the workspace that published it; installed copies stay)
+    def delete_v1_shared_object_schemas_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/shared-object-schemas/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/shares/{type}/{id}/{userId} - Stop sharing with one member; when the last share goes the resource is open again
     def delete_v1_shares_by_type_by_id_by_user_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/shares/{type}/{id}/{userId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -870,9 +1075,24 @@ module Hermetica
       request('DELETE', '/v1/siem', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/site-messages/{id}
+    def delete_v1_site_messages_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/site-messages/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/sites/{id} - Revokes the site key
     def delete_v1_sites_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/sites/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/slack/installs/{id} - Remove a Slack workspace and delete its token
+    def delete_v1_slack_installs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/slack/installs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/slack/templates/{id} - Delete a Slack message template
+    def delete_v1_slack_templates_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/slack/templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/sms/canned-replies/{id}
@@ -900,9 +1120,19 @@ module Hermetica
       request('DELETE', '/v1/snippets/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/social/accounts/{id} - Disconnect an account and delete its token
+    def delete_v1_social_accounts_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/social/accounts/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/soft-bounce-allowlist/{id}
     def delete_v1_soft_bounce_allowlist_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/soft-bounce-allowlist/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/sql-sources/{id}
+    def delete_v1_sql_sources_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/sql-sources/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/sso
@@ -995,6 +1225,11 @@ module Hermetica
       request('DELETE', '/v1/transactional/definitions/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/transactional/metadata-fields/{name} - Stop showing a metadata key in the log; messages keep their metadata
+    def delete_v1_transactional_metadata_fields_by_name(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/transactional/metadata-fields/{name}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/transactional/tags/{tag} - Remove a tag from every message that carries it
     def delete_v1_transactional_tags_by_tag(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/transactional/tags/{tag}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1020,6 +1255,11 @@ module Hermetica
       request('DELETE', '/v1/web-feeds/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /v1/webhooks/endpoints - Delete every webhook subscription in the workspace (pending deliveries are cancelled)
+    def delete_v1_webhooks_endpoints(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/webhooks/endpoints', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # DELETE /v1/webhooks/endpoints/{id}
     def delete_v1_webhooks_endpoints_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/webhooks/endpoints/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1038,6 +1278,16 @@ module Hermetica
     # DELETE /v1/whatsapp/templates/{id} - Delete a template at the provider and here (localOnly=true skips the provider call); the linked Hermetica template is archived
     def delete_v1_whatsapp_templates_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('DELETE', '/v1/whatsapp/templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/workflow-custom-types/{id}
+    def delete_v1_workflow_custom_types_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/workflow-custom-types/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # DELETE /v1/workflows/{id} - Delete a draft or archived journey for good (versions and history go with it); archive a live one first
+    def delete_v1_workflows_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/v1/workflows/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # DELETE /v1/workflows/{id}/ab
@@ -1080,6 +1330,16 @@ module Hermetica
       request('DELETE', '/v1/workspaces/current/schedule-for-removal', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # DELETE /wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}
+    def delete_wallet_apple_by_ws_v1_devices_by_device_registrations_by_pass_type_by_serial(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('DELETE', '/wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /book/{ws}/{slug} - Hosted booking page
+    def get_book_by_ws_by_slug(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/book/{ws}/{slug}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /client/geofences - Active geofences the app should monitor (Klaviyo JSON:API list)
     def get_client_geofences(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/client/geofences', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1088,6 +1348,16 @@ module Hermetica
     # GET /client/in-app-messages - In-app messages for an identified or anonymous visitor at a trigger
     def get_client_in_app_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/client/in-app-messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /client/in-app-trackers - Active tracker components for the contact (journey tracker steps)
+    def get_client_in_app_trackers(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/client/in-app-trackers', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /client/inbox - The contact's inbox, newest first, with the unread count
+    def get_client_inbox(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/client/inbox', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /client/push-config - The workspace's VAPID public key, for browsers subscribing to web push
@@ -1110,6 +1380,11 @@ module Hermetica
       request('GET', '/e/results/{ws}/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /e/s/{ws}/{token} - Anonymous survey link: a blank form (never earlier answers or results)
+    def get_esby_ws_by_token(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/e/s/{ws}/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /e/survey/{ws}/{id} - Hosted survey page
     def get_esurvey_by_ws_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/e/survey/{ws}/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1125,14 +1400,54 @@ module Hermetica
       request('GET', '/e/widget.js', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /f/{ws}/{id}/{*} - A not-indexable or private library file: private files need a valid signed link (?t=); always answered with noindex
+    def get_fby_ws_by_id_wildcard(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/f/{ws}/{id}/{*}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /feeds/reviews/{token} - Google Shopping product reviews feed (the signed link from /v1/review-feeds/google)
+    def get_feeds_reviews_by_token(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/feeds/reviews/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /healthz
     def get_healthz(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/healthz', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /hub/{ws} - The customer hub page (or its sign-in form)
+    def get_hub_by_ws(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/hub/{ws}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /hub/{ws}/api/me - Everything the signed-in shopper sees
+    def get_hub_by_ws_api_me(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/hub/{ws}/api/me', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /hub/{ws}/auth/{token}
+    def get_hub_by_ws_auth_by_token(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/hub/{ws}/auth/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /ical/{ws}/{file} - The ICS feed itself (token in the URL). Titles and times only, never message bodies
+    def get_ical_by_ws_by_file(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/ical/{ws}/{file}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /ingest/v1/forms
     def get_ingest_v1_forms(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/ingest/v1/forms', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /ingest/v1/forms/{id}/companies - Company name suggestions for a form company field (names only)
+    def get_ingest_v1_forms_by_id_companies(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/ingest/v1/forms/{id}/companies', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /ingest/v1/forms/visitor - Audience flags for on-site targeting: booleans only (known, subscriber, membership of each targeted list/segment, targeted countries)
+    def get_ingest_v1_forms_visitor(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/ingest/v1/forms/visitor', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /ingest/v1/reviews - Published reviews of one product, newest first
@@ -1143,6 +1458,11 @@ module Hermetica
     # GET /ingest/v1/review-values-reports - Count, average and 1-5 histogram of published reviews, per product
     def get_ingest_v1_review_values_reports(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/ingest/v1/review-values-reports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /ingest/v1/site-messages - Site messages for this visitor: published ones, plus those a journey queued for them
+    def get_ingest_v1_site_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/ingest/v1/site-messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /ingest/v1/slots - Slot content for the visitor: identified profiles get their segment rules
@@ -1170,6 +1490,16 @@ module Hermetica
       request('GET', '/integrations/shopify/callback', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /integrations/slack/callback
+    def get_integrations_slack_callback(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/integrations/slack/callback', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /integrations/social/{platform}/callback
+    def get_integrations_social_by_platform_callback(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/integrations/social/{platform}/callback', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /integrations/x/callback
     def get_integrations_xcallback(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/integrations/x/callback', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1178,6 +1508,16 @@ module Hermetica
     # GET /l/c/{*} - List double opt-in confirmation page (does not change state)
     def get_lcwildcard(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/l/c/{*}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /loyalty/v1/program - Programme name, tiers and rewards for a storefront widget (no member data)
+    def get_loyalty_v1_program(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/loyalty/v1/program', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /mcp - Not offered: the hosted MCP server is stateless (POST only).
+    def get_mcp(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/mcp', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /metrics - Prometheus text exposition; bearer METRICS_TOKEN (404 when unset)
@@ -1240,6 +1580,11 @@ module Hermetica
       request('GET', '/p/f/{ref}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /p/f/{ref}/companies - Company suggestions for a hosted form
+    def get_pfby_ref_companies(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/p/f/{ref}/companies', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /p/gift/{ws}/{code} - Gift redeem page
     def get_pgift_by_ws_by_code(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/p/gift/{ws}/{code}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1253,6 +1598,11 @@ module Hermetica
     # GET /p/l/{ref} - Hosted landing page (language and A/B variant chosen per visitor; `pp` = signed progressive-profiling token)
     def get_plby_ref(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/p/l/{ref}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /p/l/{ref}/companies - Company suggestions for the form on a hosted page
+    def get_plby_ref_companies(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/p/l/{ref}/companies', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /p/lists/{ws} - Public lists directory: pick lists and subscribe
@@ -1345,14 +1695,34 @@ module Hermetica
       request('GET', '/p/ng/{ws}/{pub}/widget.js', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /p/s/{token} - Shared read-only outline of a sequence
+    # GET /p/robots/{ws} - robots.txt for a site on its custom domain
+    def get_probots_by_ws(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/p/robots/{ws}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /p/s/{token} - Public share link of a campaign report: the hosted copy, tracked
     def get_psby_token(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/p/s/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /p/s/{token}/c - A click on a link of the shared copy: recorded, then redirected (only to a link the copy really contains)
+    def get_psby_token_c(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/p/s/{token}/c', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /p/seq/{token} - Shared read-only outline of a sequence
+    def get_pseq_by_token(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/p/seq/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /p/signin/{ws} - Sign in to read or manage a subscription (emails a link)
     def get_psignin_by_ws(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/p/signin/{ws}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /p/sitemap/{ws} - sitemap.xml for hosted pages (one site with `site`)
+    def get_psitemap_by_ws(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/p/sitemap/{ws}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /p/sr/{ws}/{token} - Shareable sponsor report (impressions, opens, clicks, CTR)
@@ -1465,14 +1835,19 @@ module Hermetica
       request('GET', '/v1/account/summary', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/activity - Recent workspace activity feed built from the audit log
+    # GET /v1/activity - Recent workspace activity feed built from the audit log; filter by target type, action and person
     def get_v1_activity(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/activity', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/activity/highlights - Marketer feed: recently finished sends, daily sign-ups over the last 14 days and the audience size milestone reached
+    # GET /v1/activity/highlights - Marketer feed over the chosen window: finished sends, each sign-up one by one, daily list growth and the audience milestone reached; paged b
     def get_v1_activity_highlights(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/activity/highlights', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/activity/people - Activity of everyone in the workspace; filter by type, name, person and deleted people
+    def get_v1_activity_people(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/activity/people', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/ads/accounts - Connected ad accounts
@@ -1490,6 +1865,16 @@ module Hermetica
       request('GET', '/v1/ads/accounts/{id}/conversions/log', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/ads/accounts/{id}/lead-forms - Lead-ad forms on the account's Facebook page, with their questions and consent checkboxes
+    def get_v1_ads_accounts_by_id_lead_forms(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ads/accounts/{id}/lead-forms', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ads/accounts/{id}/objects - Campaigns, ad sets and ads on the platform with last-30-day reach, spend and ROAS
+    def get_v1_ads_accounts_by_id_objects(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ads/accounts/{id}/objects', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/ads/audiences - Segment -> ad audience syncs
     def get_v1_ads_audiences(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/ads/audiences', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1503,6 +1888,26 @@ module Hermetica
     # GET /v1/ads/audiences/{id}/runs - Sync history with counts and errors
     def get_v1_ads_audiences_by_id_runs(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/ads/audiences/{id}/runs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ads/campaigns - Campaigns built here
+    def get_v1_ads_campaigns(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ads/campaigns', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ads/campaigns/{id} - One campaign
+    def get_v1_ads_campaigns_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ads/campaigns/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ads/lead-syncs - Lead-ad forms synced into forms
+    def get_v1_ads_lead_syncs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ads/lead-syncs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ads/lead-syncs/{id}/imports - Leads imported by a sync
+    def get_v1_ads_lead_syncs_by_id_imports(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ads/lead-syncs/{id}/imports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/ads/oauth/apps - Which ad platforms can be connected by sign-in on this install
@@ -1545,6 +1950,11 @@ module Hermetica
       request('GET', '/v1/agency/clients/{workspaceId}/modules', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/agency/clients/{workspaceId}/snippet - The client's website snippet (site key) and the state of its integrations
+    def get_v1_agency_clients_by_workspace_id_snippet(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/agency/clients/{workspaceId}/snippet', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/agency/groups
     def get_v1_agency_groups(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/agency/groups', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1568,6 +1978,71 @@ module Hermetica
     # GET /v1/agency/outbound - Last 30 days of outbound results per client workspace of your agency (null when you are not in an agency). Each client is read in its own te
     def get_v1_agency_outbound(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/agency/outbound', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents
+    def get_v1_ai_agents(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/{id}
+    def get_v1_ai_agents_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/{id}/analytics/summary
+    def get_v1_ai_agents_by_id_analytics_summary(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/{id}/analytics/summary', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/{id}/guidances
+    def get_v1_ai_agents_by_id_guidances(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/{id}/guidances', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/{id}/guidances/{guidanceId}
+    def get_v1_ai_agents_by_id_guidances_by_guidance_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/{id}/guidances/{guidanceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/{id}/leads
+    def get_v1_ai_agents_by_id_leads(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/{id}/leads', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/{id}/leads/{profileId}/research - What the agent knew about a lead when it wrote to them, and every proposal it made
+    def get_v1_ai_agents_by_id_leads_by_profile_id_research(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/{id}/leads/{profileId}/research', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/{id}/opportunities - Where the leads a sales agent emailed stand now
+    def get_v1_ai_agents_by_id_opportunities(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/{id}/opportunities', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/items
+    def get_v1_ai_agents_items(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/items', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/items/{id}
+    def get_v1_ai_agents_items_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/items/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai-agents/status - Whether agents can run: operator switch and workspace AI opt-in
+    def get_v1_ai_agents_status(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai-agents/status', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai/flow-builds - History of AI journey builds, newest first
+    def get_v1_ai_flow_builds(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai/flow-builds', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/ai/flow-builds/{id}
+    def get_v1_ai_flow_builds_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/ai/flow-builds/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/ai/jobs
@@ -1635,6 +2110,11 @@ module Hermetica
       request('GET', '/v1/analytics/content-slots', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/analytics/conversion-folders - Conversions grouped by folder, with each conversion's count and value in the range
+    def get_v1_analytics_conversion_folders(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/analytics/conversion-folders', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/analytics/conversion-labels
     def get_v1_analytics_conversion_labels(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/analytics/conversion-labels', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1660,7 +2140,7 @@ module Hermetica
       request('GET', '/v1/analytics/conversions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/analytics/conversions/{id} - One conversion with the touches credited for it
+    # GET /v1/analytics/conversions/{id} - One conversion with the touches credited for it, the event that triggered it and the activity around it
     def get_v1_analytics_conversions_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/analytics/conversions/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -1678,6 +2158,11 @@ module Hermetica
     # GET /v1/analytics/dashboards/{id}
     def get_v1_analytics_dashboards_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/analytics/dashboards/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/analytics/dashboards/{id}/definition/export - The dashboard and its reports as portable JSON (no schedules, recipients or sharing)
+    def get_v1_analytics_dashboards_by_id_definition_export(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/analytics/dashboards/{id}/definition/export', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/analytics/dashboards/{id}/export - Every widget as one CSV
@@ -1715,6 +2200,11 @@ module Hermetica
       request('GET', '/v1/analytics/forms', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/analytics/landing-pages - Landing page report: visits, unique visitors, sign-ups and conversion rate per page over a date range
+    def get_v1_analytics_landing_pages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/analytics/landing-pages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/analytics/messages
     def get_v1_analytics_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/analytics/messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1728,6 +2218,11 @@ module Hermetica
     # GET /v1/analytics/predictions/status - Whether the workspace has enough order history for predictive analytics, and how many profiles are scored
     def get_v1_analytics_predictions_status(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/analytics/predictions/status', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/analytics/record-sources - Report builder record sources (contacts, companies, form results, page hits, asset downloads, workflow log, point log, frequency rules) and 
+    def get_v1_analytics_record_sources(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/analytics/record-sources', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/analytics/reports - Saved reports; ?archived=true lists the archived ones
@@ -1795,6 +2290,11 @@ module Hermetica
       request('GET', '/v1/analytics/sources/{kind}/{id}/summary', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/analytics/surveys/{id}/report - Survey report: responses and answer breakdown per question, optionally for the members of one list or segment
+    def get_v1_analytics_surveys_by_id_report(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/analytics/surveys/{id}/report', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/analytics/time-to-convert
     def get_v1_analytics_time_to_convert(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/analytics/time-to-convert', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -1843,6 +2343,16 @@ module Hermetica
     # GET /v1/assets/by-path - Look an asset up by /Folder/Sub/filename
     def get_v1_assets_by_path(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/assets/by-path', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/association-labels
+    def get_v1_association_labels(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/association-labels', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/associations/{type}/{id} - Everything a profile or object record is associated with, with labels
+    def get_v1_associations_by_type_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/associations/{type}/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/attributes - Attribute catalogue for the segment builder: standard fields, observed custom attribute keys + inferred types, event names with property key
@@ -1903,6 +2413,36 @@ module Hermetica
     # GET /v1/authorized-apps/{clientId}
     def get_v1_authorized_apps_by_client_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/authorized-apps/{clientId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/auth/signup-info - Whether sign-up is open, which social sign-in buttons to show
+    def get_v1_auth_signup_info(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/auth/signup-info', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/auth/social/{provider}/callback - Provider callback: signs in, links by verified email, or creates an account
+    def get_v1_auth_social_by_provider_callback(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/auth/social/{provider}/callback', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/auth/social/{provider}/start - Start Google or GitHub sign-in (redirects to the provider)
+    def get_v1_auth_social_by_provider_start(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/auth/social/{provider}/start', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/batches
+    def get_v1_batches(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/batches', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/batches/{id}
+    def get_v1_batches_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/batches/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/batches/{id}/results - Each call's status and response body, in call order (page with `after`)
+    def get_v1_batches_by_id_results(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/batches/{id}/results', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/benchmarks - Peer benchmarks (overview): your last 90 days against peer percentiles, falling back to a labelled static reference table
@@ -2040,6 +2580,11 @@ module Hermetica
       request('GET', '/v1/calendar', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/calendar-feeds
+    def get_v1_calendar_feeds(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/calendar-feeds', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/calendar/mine - My own calendar entries
     def get_v1_calendar_mine(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/calendar/mine', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2065,6 +2610,21 @@ module Hermetica
       request('GET', '/v1/campaign-folders/{id}/assets/{assetType}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/campaign-folders/{id}/budgets
+    def get_v1_campaign_folders_by_id_budgets(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaign-folders/{id}/budgets', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/campaign-folders/{id}/report - Roll-up of everything filed in a campaign folder: contacts reached (first touch, last touch, influenced), message, form and page metrics, an
+    def get_v1_campaign_folders_by_id_report(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaign-folders/{id}/report', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/campaign-messages - Every campaign message in the workspace, filtered by campaign, channel, status, text and updated time
+    def get_v1_campaign_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaign-messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/campaign-messages/{id}/tags
     def get_v1_campaign_messages_by_id_tags(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/campaign-messages/{id}/tags', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2085,6 +2645,16 @@ module Hermetica
       request('GET', '/v1/campaigns/{id}/ab-report', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/campaigns/{id}/audiences
+    def get_v1_campaigns_by_id_audiences(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaigns/{id}/audiences', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/campaigns/{id}/audiences/{audienceId}
+    def get_v1_campaigns_by_id_audiences_by_audience_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaigns/{id}/audiences/{audienceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/campaigns/{id}/checklist
     def get_v1_campaigns_by_id_checklist(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/campaigns/{id}/checklist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2098,6 +2668,11 @@ module Hermetica
     # GET /v1/campaigns/{id}/content-check - Writing and layout checks on the first message of an email campaign: subject length, reading ease, call to action, length
     def get_v1_campaigns_by_id_content_check(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/campaigns/{id}/content-check', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/campaigns/{id}/drafts
+    def get_v1_campaigns_by_id_drafts(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaigns/{id}/drafts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/campaigns/{id}/feedback
@@ -2130,6 +2705,21 @@ module Hermetica
       request('GET', '/v1/campaigns/{id}/messages/{messageId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/campaigns/{id}/messages/{messageId}/variants
+    def get_v1_campaigns_by_id_messages_by_message_id_variants(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaigns/{id}/messages/{messageId}/variants', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/campaigns/{id}/postcard
+    def get_v1_campaigns_by_id_postcard(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaigns/{id}/postcard', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/campaigns/{id}/postcard/report
+    def get_v1_campaigns_by_id_postcard_report(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaigns/{id}/postcard/report', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/campaigns/{id}/push - A push campaign's title, body and extras (image, link, data, badge, sound, TTL, per-platform overrides)
     def get_v1_campaigns_by_id_push(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/campaigns/{id}/push', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2143,6 +2733,11 @@ module Hermetica
     # GET /v1/campaigns/{id}/recipient-estimations/{jobId}
     def get_v1_campaigns_by_id_recipient_estimations_by_job_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/campaigns/{id}/recipient-estimations/{jobId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/campaigns/{id}/recipient-estimations/latest - The most recent recipient estimation of this campaign
+    def get_v1_campaigns_by_id_recipient_estimations_latest(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/campaigns/{id}/recipient-estimations/latest', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/campaigns/{id}/recipients
@@ -2220,7 +2815,7 @@ module Hermetica
       request('GET', '/v1/campaigns/{id}/variants/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/catalog/bulk-jobs
+    # GET /v1/catalog/bulk-jobs - Filter by resource, op and status; page with nextCursor
     def get_v1_catalog_bulk_jobs(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/catalog/bulk-jobs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -2230,7 +2825,7 @@ module Hermetica
       request('GET', '/v1/catalog/bulk-jobs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/catalog/categories
+    # GET /v1/catalog/categories - Filter by ids, name (contains) or item; page with nextCursor
     def get_v1_catalog_categories(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/catalog/categories', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -2265,7 +2860,7 @@ module Hermetica
       request('GET', '/v1/catalog/items/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/catalog/items/{id}/categories
+    # GET /v1/catalog/items/{id}/categories - The category objects this item is in
     def get_v1_catalog_items_by_id_categories(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/catalog/items/{id}/categories', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -2285,7 +2880,7 @@ module Hermetica
       request('GET', '/v1/catalog/items/{id}/variants', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/catalog/variants
+    # GET /v1/catalog/variants - Filter by ids, sku, title, published or item; page with nextCursor
     def get_v1_catalog_variants(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/catalog/variants', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -2293,11 +2888,6 @@ module Hermetica
     # GET /v1/catalog/variants/{id}
     def get_v1_catalog_variants_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/catalog/variants/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
-    end
-
-    # GET /v1/client-previews/{externalId}
-    def get_v1_client_previews_by_external_id(path: nil, query: nil, body: nil, idempotency_key: nil)
-      request('GET', '/v1/client-previews/{externalId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/collections
@@ -2440,6 +3030,11 @@ module Hermetica
       request('GET', '/v1/commerce/stores/{storeId}/stats', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/compliance/export-retention - Days an export file is kept before it is deleted
+    def get_v1_compliance_export_retention(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/compliance/export-retention', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/compliance/gpc - Whether a browser Global Privacy Control / Do Not Track signal counts as a tracking opt-out (default on)
     def get_v1_compliance_gpc(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/compliance/gpc', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2458,6 +3053,11 @@ module Hermetica
     # GET /v1/compliance/trash-retention - Days deleted campaigns, lists and archived templates stay restorable (0 = forever)
     def get_v1_compliance_trash_retention(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/compliance/trash-retention', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/compliance/unconfirmed-purge - Days after which contacts that never confirmed an opt-in are deleted (null = off)
+    def get_v1_compliance_unconfirmed_purge(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/compliance/unconfirmed-purge', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/compliance/unsubscribe-purge - Days after which an unsubscribed contact is erased (null = never)
@@ -2505,6 +3105,11 @@ module Hermetica
       request('GET', '/v1/content-slots', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/content-slots/pushes - Live content journeys pushed into individual visitors' slots
+    def get_v1_content_slots_pushes(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/content-slots/pushes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/conversations - Replies to marketing campaigns
     def get_v1_conversations(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/conversations', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2523,6 +3128,11 @@ module Hermetica
     # GET /v1/conversations/{id}/messages/{messageId}
     def get_v1_conversations_by_id_messages_by_message_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/conversations/{id}/messages/{messageId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/coupon-codes - Codes across every pool: by profile, status, expiry range
+    def get_v1_coupon_codes(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/coupon-codes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/coupon-pools
@@ -2665,6 +3275,11 @@ module Hermetica
       request('GET', '/v1/deliverability/rdns', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/deliverability/recommendations
+    def get_v1_deliverability_recommendations(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/deliverability/recommendations', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/deliverability/reputation
     def get_v1_deliverability_reputation(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/deliverability/reputation', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2705,12 +3320,37 @@ module Hermetica
       request('GET', '/v1/delivery/settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/destinations
+    def get_v1_destinations(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/destinations', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/destinations/{id}
+    def get_v1_destinations_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/destinations/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/destinations/{id}/deliveries - Recent deliveries with their status and last error
+    def get_v1_destinations_by_id_deliveries(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/destinations/{id}/deliveries', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/developer/requests - API request log for debugging: method, route, status and duration of authenticated calls, kept 30 days
     def get_v1_developer_requests(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/developer/requests', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/emails - Campaigns as one email list with state and channel filters
+    # GET /v1/do-not-contact - LinkedIn do-not-contact list (emails and phones are listed under suppressions)
+    def get_v1_do_not_contact(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/do-not-contact', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/do-not-contact/check
+    def get_v1_do_not_contact_check(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/do-not-contact/check', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/emails - Campaigns as one email list: state, type, channel, created/updated/scheduled ranges, archived and sort
     def get_v1_emails(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/emails', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -2720,14 +3360,54 @@ module Hermetica
       request('GET', '/v1/emails/{id}/draft', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/emails/statistics/histogram - Day-by-day sent, delivered, bounced, opened and clicked for one email
+    # GET /v1/emails/statistics/histogram - Sent, delivered, bounced, opened and clicked for one email per day, week or month between start and end
     def get_v1_emails_statistics_histogram(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/emails/statistics/histogram', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/emails/statistics/list - Totals for several emails at once (comma separated ids)
+    # GET /v1/emails/statistics/list - Totals for up to 50 emails (comma separated ids) in a date window, plus their sum
     def get_v1_emails_statistics_list(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/emails/statistics/list', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/{token}/ai
+    def get_v1_embed_api_by_token_ai(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/{token}/ai', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/{token}/deliveries
+    def get_v1_embed_api_by_token_deliveries(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/{token}/deliveries', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/{token}/journey
+    def get_v1_embed_api_by_token_journey(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/{token}/journey', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/{token}/sections - Saved sections to insert a copy of
+    def get_v1_embed_api_by_token_sections(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/{token}/sections', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/{token}/seed-lists
+    def get_v1_embed_api_by_token_seed_lists(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/{token}/seed-lists', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/{token}/template
+    def get_v1_embed_api_by_token_template(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/{token}/template', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/{token}/template/versions
+    def get_v1_embed_api_by_token_template_versions(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/{token}/template/versions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/embed-api/frame-policy - Internal: frame-ancestors for the web embed page, from the token in x-embed-token
+    def get_v1_embed_api_frame_policy(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/embed-api/frame-policy', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/event-definitions
@@ -2745,7 +3425,7 @@ module Hermetica
       request('GET', '/v1/event-definitions/{name}/usage', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/events - Workspace-wide event list (filter by name, profile, time range, properties)
+    # GET /v1/events - Workspace-wide event list: filter by name, profile, time range, properties, journey or broadcast; sort by datetime; include=metric,profile
     def get_v1_events(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/events', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -2753,6 +3433,16 @@ module Hermetica
     # GET /v1/events/{id}
     def get_v1_events_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/events/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/events/export - The same filters as GET /v1/events, as CSV text (first 50,000 events); POST /v1/events/export-jobs exports every match as a file
+    def get_v1_events_export(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/events/export', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/events/settings - Whether server-side event ingest is on, and the custom field used as each person's primary key
+    def get_v1_events_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/events/settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/experiments
@@ -2790,7 +3480,7 @@ module Hermetica
       request('GET', '/v1/files', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/forms
+    # GET /v1/forms - Filter by name, status, kind, ad id and created/updated ranges; sort by created, updated or name
     def get_v1_forms(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/forms', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -2818,6 +3508,11 @@ module Hermetica
     # GET /v1/forms/{id}/submissions/{submissionId}
     def get_v1_forms_by_id_submissions_by_submission_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/forms/{id}/submissions/{submissionId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/forms/{id}/submissions/export.csv - Every submission as CSV, oldest first (one column per field)
+    def get_v1_forms_by_id_submissions_export_csv(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/forms/{id}/submissions/export.csv', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/forms/{id}/summary
@@ -2910,6 +3605,11 @@ module Hermetica
       request('GET', '/v1/hooks/triggers/{trigger}/sample', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/identifier-blocks - Identifiers of suppressed-and-deleted contacts (values are kept hashed only)
+    def get_v1_identifier_blocks(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/identifier-blocks', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/id-mappings - Old ids (from HubSpot, for example) and the lists or journeys they became
     def get_v1_id_mappings(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/id-mappings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -2948,6 +3648,11 @@ module Hermetica
     # GET /v1/import-schedules
     def get_v1_import_schedules(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/import-schedules', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/in-app-components - Developer-defined in-app components
+    def get_v1_in_app_components(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/in-app-components', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/in-app-messages - In-app messages
@@ -3000,6 +3705,11 @@ module Hermetica
       request('GET', '/v1/inbound/routes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/info/ip-addresses - Egress IP addresses to allowlist for webhooks and connectors; compare syncToken to detect changes
+    def get_v1_info_ip_addresses(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/info/ip-addresses', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/integrations/catalog - Declarative connectors available to connect
     def get_v1_integrations_catalog(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/integrations/catalog', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -3008,6 +3718,16 @@ module Hermetica
     # GET /v1/integrations/connections
     def get_v1_integrations_connections(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/integrations/connections', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/connections/{id}/crm/sources - Lists, reports, list views, campaigns or filters that can be imported
+    def get_v1_integrations_connections_by_id_crm_sources(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/connections/{id}/crm/sources', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/connections/{id}/crm/users
+    def get_v1_integrations_connections_by_id_crm_users(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/connections/{id}/crm/users', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/integrations/connections/{id}/declarative - Sync cursors, last error and the webhook URL + secret to paste into the vendor
@@ -3023,6 +3743,36 @@ module Hermetica
     # GET /v1/integrations/connections/{id}/webhook-url - The URL the source (e.g. Segment) should send events to
     def get_v1_integrations_connections_by_id_webhook_url(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/integrations/connections/{id}/webhook-url', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/crm-imports
+    def get_v1_integrations_crm_imports(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/crm-imports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/crm-log - Per-record CRM sync log, newest first
+    def get_v1_integrations_crm_log(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/crm-log', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/crm-settings - Workspace CRM settings (sync log retention)
+    def get_v1_integrations_crm_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/crm-settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/google/callback
+    def get_v1_integrations_google_callback(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/google/callback', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/marketplace - Catalogue packages, whether each passes signature and review checks, and the installed version
+    def get_v1_integrations_marketplace(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/marketplace', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/integrations/packages
+    def get_v1_integrations_packages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/integrations/packages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/integrations/secrets - Secret names (values are never returned)
@@ -3055,6 +3805,16 @@ module Hermetica
       request('GET', '/v1/jobs/{id}/stream', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/landing-page-clusters
+    def get_v1_landing_page_clusters(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/landing-page-clusters', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/landing-page-clusters/{id}
+    def get_v1_landing_page_clusters_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/landing-page-clusters/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/landing-page-folders
     def get_v1_landing_page_folders(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/landing-page-folders', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -3075,7 +3835,7 @@ module Hermetica
       request('GET', '/v1/landing-page-folders/{id}/revisions/{revisionId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/landing-pages
+    # GET /v1/landing-pages - Filter by name, state, site, folder, language, archived and created/updated ranges; sort by created, updated or name
     def get_v1_landing_pages(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/landing-pages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -3110,6 +3870,11 @@ module Hermetica
       request('GET', '/v1/landing-pages/{id}/clicks', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/landing-pages/{id}/content - The page rendered to HTML (draft by default), with its block document
+    def get_v1_landing_pages_by_id_content(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/landing-pages/{id}/content', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/landing-pages/{id}/languages
     def get_v1_landing_pages_by_id_languages(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/landing-pages/{id}/languages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -3130,6 +3895,11 @@ module Hermetica
       request('GET', '/v1/landing-pages/{id}/revisions/{revisionId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/landing-pages/{id}/seo - SEO recommendations for one page (draft)
+    def get_v1_landing_pages_by_id_seo(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/landing-pages/{id}/seo', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/landing-pages/not-found - Page addresses visitors requested that serve nothing, most requested first
     def get_v1_landing_pages_not_found(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/landing-pages/not-found', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -3138,6 +3908,16 @@ module Hermetica
     # GET /v1/landing-pages/report - Visits, sign-ups, conversion and video plays for every page over a window
     def get_v1_landing_pages_report(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/landing-pages/report', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/landing-pages/seo/audit - SEO audit of every page: score and recommendations
+    def get_v1_landing_pages_seo_audit(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/landing-pages/seo/audit', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/landing-page-templates - Built-in page presets for `template_id`, and a link to more
+    def get_v1_landing_page_templates(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/landing-page-templates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/leads
@@ -3160,9 +3940,44 @@ module Hermetica
       request('GET', '/v1/leads/companies/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/leads/companies/{id}/crm
+    def get_v1_leads_companies_by_id_crm(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/leads/companies/{id}/crm', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/leads/companies/{id}/files
+    def get_v1_leads_companies_by_id_files(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/leads/companies/{id}/files', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/leads/companies/{id}/files/{fileId}/url - A download link valid for five minutes
+    def get_v1_leads_companies_by_id_files_by_file_id_url(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/leads/companies/{id}/files/{fileId}/url', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/leads/companies/{id}/notes
     def get_v1_leads_companies_by_id_notes(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/leads/companies/{id}/notes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/leads/companies/{id}/score - Account score plus the roll-up of linked contacts' scores (profile attribute `key`)
+    def get_v1_leads_companies_by_id_score(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/leads/companies/{id}/score', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/leads/companies/export - Every company as CSV, with score and custom fields
+    def get_v1_leads_companies_export(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/leads/companies/export', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/leads/companies/search - Companies whose name or domain starts with q
+    def get_v1_leads_companies_search(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/leads/companies/search', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/leads/company-fields - Custom company fields
+    def get_v1_leads_company_fields(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/leads/company-fields', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/leads/company-lists
@@ -3270,7 +4085,7 @@ module Hermetica
       request('GET', '/v1/list-folders/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/lists
+    # GET /v1/lists - Lists with member counts; `count`/`offset` page them, `stats=true` adds send and unsubscribe stats
     def get_v1_lists(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/lists', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -3305,6 +4120,11 @@ module Hermetica
       request('GET', '/v1/lists/{id}/clients', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/lists/{id}/growth-history - Daily sign-ups, imports, other adds, removals, pending opt-ins and the running member total of one list
+    def get_v1_lists_by_id_growth_history(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/lists/{id}/growth-history', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/lists/{id}/members - List members, with the same filters as GET /v1/profiles
     def get_v1_lists_by_id_members(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/lists/{id}/members', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -3335,7 +4155,7 @@ module Hermetica
       request('GET', '/v1/lists/{id}/pending', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/lists/{id}/size-history - List size at the end of each of the last N days
+    # GET /v1/lists/{id}/size-history - List size at the end of each of the last N days, or of each day between `from` and `to`
     def get_v1_lists_by_id_size_history(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/lists/{id}/size-history', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -3343,6 +4163,71 @@ module Hermetica
     # GET /v1/lists/deleted - Lists deleted and still restorable
     def get_v1_lists_deleted(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/lists/deleted', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/looker/datasets - Saved reports Looker Studio can use as data sources
+    def get_v1_looker_datasets(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/looker/datasets', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/looker/manifest - Apps Script files (appsscript.json, Code.gs) for the Looker Studio community connector
+    def get_v1_looker_manifest(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/looker/manifest', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/hub - Customer hub settings and its public URL
+    def get_v1_loyalty_hub(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/hub', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs
+    def get_v1_loyalty_programs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}
+    def get_v1_loyalty_programs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/members
+    def get_v1_loyalty_programs_by_id_members(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/members', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/members/{profileId}
+    def get_v1_loyalty_programs_by_id_members_by_profile_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/members/{profileId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/members/{profileId}/vouchers
+    def get_v1_loyalty_programs_by_id_members_by_profile_id_vouchers(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/members/{profileId}/vouchers', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/rewards
+    def get_v1_loyalty_programs_by_id_rewards(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/rewards', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/rules
+    def get_v1_loyalty_programs_by_id_rules(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/rules', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/tiers
+    def get_v1_loyalty_programs_by_id_tiers(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/tiers', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/transactions - The points ledger (append-only), newest first
+    def get_v1_loyalty_programs_by_id_transactions(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/transactions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/loyalty/programs/{id}/wallet - Wallet pass settings (never the certificate or keys)
+    def get_v1_loyalty_programs_by_id_wallet(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/loyalty/programs/{id}/wallet', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/mapped-metrics
@@ -3358,6 +4243,11 @@ module Hermetica
     # GET /v1/marketing-events
     def get_v1_marketing_events(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/marketing-events', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/marketing-events/apps - Event apps and their event-details URL templates
+    def get_v1_marketing_events_apps(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/marketing-events/apps', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/marketing-events/{id}
@@ -3415,7 +4305,12 @@ module Hermetica
       request('GET', '/v1/me', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/members
+    # GET /v1/me/identities - Google/GitHub sign-ins linked to your account
+    def get_v1_me_identities(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/me/identities', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/members - Members of this workspace; ?email= or ?username= (display name or the part of the email before @) narrows to exact matches
     def get_v1_members(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/members', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -3448,6 +4343,11 @@ module Hermetica
     # GET /v1/messages/{id}/content - Rendered subject/body/headers of a sent message, while inside the retention window
     def get_v1_messages_by_id_content(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/messages/{id}/content', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/messages/{id}/preview - A message re-rendered for its recipient (any purpose and channel; stored content is transactional email only). Unsubscribe links stay placeh
+    def get_v1_messages_by_id_preview(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/messages/{id}/preview', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/messages/events/export - CSV export of message events (delivered, bounced, opened, clicked...) for a date range
@@ -3543,6 +4443,16 @@ module Hermetica
     # GET /v1/newsletter/engagement/surveys/{id} - One poll or survey, with the poll block for editors
     def get_v1_newsletter_engagement_surveys_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/newsletter/engagement/surveys/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/newsletter/engagement/surveys/{id}/responses - Individual responses (respondent, time, answers), newest first
+    def get_v1_newsletter_engagement_surveys_by_id_responses(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/newsletter/engagement/surveys/{id}/responses', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/newsletter/engagement/surveys/{id}/responses/{respondent} - One respondent's answers
+    def get_v1_newsletter_engagement_surveys_by_id_responses_by_respondent(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/newsletter/engagement/surveys/{id}/responses/{respondent}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/newsletter/engagement/surveys/{id}/results - Results per question
@@ -3700,9 +4610,14 @@ module Hermetica
       request('GET', '/v1/notes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/notes/{id}
+    # GET /v1/notes/{id} - A contact or company note by its id
     def get_v1_notes_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/notes/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/notifications - Your in-app notifications in this workspace, newest first, with the unread count
+    def get_v1_notifications(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/notifications', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/oauth/authorize - Validate an authorization request and describe what the app asks for
@@ -3765,6 +4680,26 @@ module Hermetica
       request('GET', '/v1/object-types/{id}/versions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/operator/settings
+    def get_v1_operator_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/operator/settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/operator/stats - Platform analytics: accounts, sign-ups, sessions, queue health
+    def get_v1_operator_stats(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/operator/stats', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/operator/teams - Every workspace on this instance with its organization, members and status
+    def get_v1_operator_teams(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/operator/teams', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/operator/waitlist
+    def get_v1_operator_waitlist(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/operator/waitlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/ops/dlq - Failed (retries exhausted) jobs belonging to the caller's workspace
     def get_v1_ops_dlq(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/ops/dlq', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -3825,6 +4760,16 @@ module Hermetica
       request('GET', '/v1/outbound/blocklist/download', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/outbound/booking-pages
+    def get_v1_outbound_booking_pages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/booking-pages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/outbound/booking-pages/{id}/bookings
+    def get_v1_outbound_booking_pages_by_id_bookings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/booking-pages/{id}/bookings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/outbound/call-dispositions
     def get_v1_outbound_call_dispositions(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/outbound/call-dispositions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -3883,6 +4828,11 @@ module Hermetica
     # GET /v1/outbound/inbox-mail/sent - Replies and forwards sent from the inbox
     def get_v1_outbound_inbox_mail_sent(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/outbound/inbox-mail/sent', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/outbound/inbox-routing
+    def get_v1_outbound_inbox_routing(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/inbox-routing', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/outbound/inbox/untracked - Replies that matched no send or prospect
@@ -3953,6 +4903,11 @@ module Hermetica
     # GET /v1/outbound/pools - Sender pools (readable with outbound:read, for sequence mailbox pickers)
     def get_v1_outbound_pools(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/outbound/pools', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/outbound/proposals - Messages proposed by AI agents, waiting for a person
+    def get_v1_outbound_proposals(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/proposals', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/outbound/prospects
@@ -4085,6 +5040,36 @@ module Hermetica
       request('GET', '/v1/outbound/tasks/filters', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/outbound/task-types
+    def get_v1_outbound_task_types(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/task-types', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/outbound/telephony - The connected Twilio Voice account (the auth token is never returned)
+    def get_v1_outbound_telephony(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/telephony', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/outbound/telephony/my-phone - Your own phone for click-to-call (Twilio rings it first)
+    def get_v1_outbound_telephony_my_phone(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/telephony/my-phone', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/outbound/voice-clips
+    def get_v1_outbound_voice_clips(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/outbound/voice-clips', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/page-sites
+    def get_v1_page_sites(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/page-sites', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/page-sites/{id}
+    def get_v1_page_sites_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/page-sites/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/planner/goals - Business goals the planner can build a starter plan for
     def get_v1_planner_goals(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/planner/goals', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4103,6 +5088,21 @@ module Hermetica
     # GET /v1/postal-addresses/{id}
     def get_v1_postal_addresses_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/postal-addresses/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/postal-addresses/usable - Ids of the saved addresses the caller may pick (open ones, plus those of the caller's user groups)
+    def get_v1_postal_addresses_usable(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/postal-addresses/usable', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/postal-address-groups - Address id -> user groups that may use it (absent = everyone)
+    def get_v1_postal_address_groups(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/postal-address-groups', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/profile-filters
+    def get_v1_profile_filters(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/profile-filters', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/profiles
@@ -4125,7 +5125,7 @@ module Hermetica
       request('GET', '/v1/profiles/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/profiles/{id}/activity
+    # GET /v1/profiles/{id}/activity - Timeline, newest first; filter by activity type and by event / ref name
     def get_v1_profiles_by_id_activity(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/profiles/{id}/activity', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -4140,7 +5140,7 @@ module Hermetica
       request('GET', '/v1/profiles/{id}/campaign-stats', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/profiles/{id}/companies - The company this contact belongs to (at most one)
+    # GET /v1/profiles/{id}/companies - Every company this contact is linked to, primary first, with the link fields
     def get_v1_profiles_by_id_companies(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/profiles/{id}/companies', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -4153,6 +5153,11 @@ module Hermetica
     # GET /v1/profiles/{id}/contact-prefs - Snooze, preferred channel and per-channel frequency; all enforced by the eligibility gate
     def get_v1_profiles_by_id_contact_prefs(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/profiles/{id}/contact-prefs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/profiles/{id}/crm - CRM records this contact is linked to
+    def get_v1_profiles_by_id_crm(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/profiles/{id}/crm', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/profiles/{id}/devices - Device records entered by hand for this person (flagged manual; real visits are in the device_* attributes)
@@ -4170,6 +5175,11 @@ module Hermetica
       request('GET', '/v1/profiles/{id}/export', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/profiles/{id}/files
+    def get_v1_profiles_by_id_files(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/profiles/{id}/files', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/profiles/{id}/geo-ips
     def get_v1_profiles_by_id_geo_ips(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/profiles/{id}/geo-ips', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4178,6 +5188,11 @@ module Hermetica
     # GET /v1/profiles/{id}/identifiers - Every email, phone and external id attached to a person, including those that came with a merge
     def get_v1_profiles_by_id_identifiers(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/profiles/{id}/identifiers', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/profiles/{id}/inbox - A contact's inbox, including read and deleted messages
+    def get_v1_profiles_by_id_inbox(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/profiles/{id}/inbox', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/profiles/{id}/lists
@@ -4290,6 +5305,11 @@ module Hermetica
       request('GET', '/v1/providers', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/public/booking/{ws}/{slug}/slots - Open start times of a booking page (JSON)
+    def get_v1_public_booking_by_ws_by_slug_slots(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/public/booking/{ws}/{slug}/slots', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/public/brand - Name, logo and colours for a verified dashboard host (null otherwise)
     def get_v1_public_brand(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/public/brand', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4305,6 +5325,16 @@ module Hermetica
       request('GET', '/v1/public/sponsor-report/{ws}/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/push/live - Live notifications, newest first
+    def get_v1_push_live(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/push/live', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/push/live/{id} - One live notification and its status
+    def get_v1_push_live_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/push/live/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/push/stats - Push sends, deliveries, failures, opens and retired devices for a window
     def get_v1_push_stats(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/push/stats', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4318,6 +5348,11 @@ module Hermetica
     # GET /v1/push-tokens/{id} - One registered device; `profileId` names the profile it belongs to
     def get_v1_push_tokens_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/push-tokens/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/qa-preview/clients - Mail clients the connected preview service offers, and its credit balance when it reports one
+    def get_v1_qa_preview_clients(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/qa-preview/clients', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/qa-preview/connection
@@ -4350,12 +5385,12 @@ module Hermetica
       request('GET', '/v1/registrar/search', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/reports
+    # GET /v1/reports - Sent campaigns with opens, clicks, bounces, unsubscribes, complaints and rates; filter by channel, type and send time
     def get_v1_reports(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/reports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/reports/{id}
+    # GET /v1/reports/{id} - One campaign report: domains, locations by country and region, links, abuse, revenue, rates, list-average and industry comparison, and the s
     def get_v1_reports_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/reports/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -4380,14 +5415,34 @@ module Hermetica
       request('GET', '/v1/reports/{id}/click-details', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/reports/{id}/links - Every link: clicks, unique clickers, last click, share of all clicks, and the split per A/B variant
+    def get_v1_reports_by_id_links(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/reports/{id}/links', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/reports/{id}/products
     def get_v1_reports_by_id_products(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/reports/{id}/products', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/reports/{id}/sub-reports
+    # GET /v1/reports/{id}/share-stats - Views, unique visitors, referrers and link clicks of the public share link
+    def get_v1_reports_by_id_share_stats(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/reports/{id}/share-stats', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/reports/{id}/sub-reports - A/B variants, resends and RSS issues of this campaign
     def get_v1_reports_by_id_sub_reports(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/reports/{id}/sub-reports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/reports/{id}/unsubscribed - Who unsubscribed from this campaign, when, and how (link, List-Unsubscribe header, reply ...)
+    def get_v1_reports_by_id_unsubscribed(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/reports/{id}/unsubscribed', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/review-feeds/google - URLs of the Google Shopping product reviews feed (XML, schema 2.3, 5,000 reviews per file) to give Merchant Center
+    def get_v1_review_feeds_google(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/review-feeds/google', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/reviews
@@ -4410,6 +5465,11 @@ module Hermetica
       request('GET', '/v1/reviews/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/review-settings - Review-for-coupon incentive
+    def get_v1_review_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/review-settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/roles
     def get_v1_roles(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/roles', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4430,7 +5490,7 @@ module Hermetica
       request('GET', '/v1/route-policies/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/saved-sections
+    # GET /v1/saved-sections - Filter by name, block type and created / updated dates; sort newest, oldest, name or updated
     def get_v1_saved_sections(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/saved-sections', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -4453,6 +5513,11 @@ module Hermetica
     # GET /v1/scores/{id}
     def get_v1_scores_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/scores/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/scores/{id}/companies - Company scores rolled up from their contacts (sum, max or average), highest first
+    def get_v1_scores_by_id_companies(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/scores/{id}/companies', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/scores/{id}/draft
@@ -4510,7 +5575,7 @@ module Hermetica
       request('GET', '/v1/segments/{id}/explain-match/{profileId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/segments/{id}/export - Current members as CSV text (first 50,000)
+    # GET /v1/segments/{id}/export - Current members as CSV text (first 50,000); POST /v1/segments/:id/export-jobs exports every member as a file
     def get_v1_segments_by_id_export(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/segments/{id}/export', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -4525,9 +5590,14 @@ module Hermetica
       request('GET', '/v1/segments/{id}/match-runs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/segments/{id}/members
+    # GET /v1/segments/{id}/members - Current members with the time each joined; filter by email, phone or join date, sort by join date
     def get_v1_segments_by_id_members(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/segments/{id}/members', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/segments/{id}/objects - Members of an object segment, each with the profiles linked to it
+    def get_v1_segments_by_id_objects(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/segments/{id}/objects', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/segments/{id}/snapshots - Saved snapshots of a segment, newest first
@@ -4585,6 +5655,11 @@ module Hermetica
       request('GET', '/v1/senders/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/senders/{id}/signing - S/MIME certificate and PGP signing key of an email sender (metadata only; private parts never leave the vault)
+    def get_v1_senders_by_id_signing(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/senders/{id}/signing', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/senders/{id}/stats
     def get_v1_senders_by_id_stats(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/senders/{id}/stats', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4605,6 +5680,11 @@ module Hermetica
       request('GET', '/v1/send-options/{sourceKind}/{sourceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/shared-object-schemas - Object schemas shared across the workspaces of this organization
+    def get_v1_shared_object_schemas(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/shared-object-schemas', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/shares/{type}/{id} - Who a list, template, campaign or segment is shared with (none = open to all roles that can use it)
     def get_v1_shares_by_type_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/shares/{type}/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4618,6 +5698,16 @@ module Hermetica
     # GET /v1/signup-domains
     def get_v1_signup_domains(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/signup-domains', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/site-messages
+    def get_v1_site_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/site-messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/site-messages/{id}
+    def get_v1_site_messages_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/site-messages/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/sites
@@ -4638,6 +5728,21 @@ module Hermetica
     # GET /v1/sites/{id}/health
     def get_v1_sites_by_id_health(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/sites/{id}/health', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/slack/installs - Slack workspaces the app is installed in
+    def get_v1_slack_installs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/slack/installs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/slack/sends - Recent Slack sends with their outcome
+    def get_v1_slack_sends(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/slack/sends', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/slack/templates - Slack message templates
+    def get_v1_slack_templates(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/slack/templates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/sms/ai-drafts/{id}
@@ -4730,6 +5835,36 @@ module Hermetica
       request('GET', '/v1/snippets/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/social/accounts - Connected social accounts
+    def get_v1_social_accounts(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/social/accounts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/social/apps - Which networks (and Slack) can be connected by sign-in on this install
+    def get_v1_social_apps(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/social/apps', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/social/oauth/pending/{id} - Pages and accounts a finished sign-in can post as, to pick from (yours, for 15 minutes)
+    def get_v1_social_oauth_pending_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/social/oauth/pending/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/social/posts - Posts scheduled or published in a date range (the calendar)
+    def get_v1_social_posts(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/social/posts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/social/posts/{id} - One post with its publish status and metrics
+    def get_v1_social_posts_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/social/posts/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/social/posts/{id}/comments - Comments on a published post (pulled with its metrics)
+    def get_v1_social_posts_by_id_comments(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/social/posts/{id}/comments', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/soft-bounce-allowlist
     def get_v1_soft_bounce_allowlist(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/soft-bounce-allowlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4800,6 +5935,16 @@ module Hermetica
       request('GET', '/v1/sponsors/publications/{publicationId}/rules', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/sql-sources
+    def get_v1_sql_sources(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/sql-sources', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/sql-sources/{id}
+    def get_v1_sql_sources_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/sql-sources/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/sso
     def get_v1_sso(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/sso', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -4828,6 +5973,11 @@ module Hermetica
     # GET /v1/stages - Lifecycle stages in order of weight
     def get_v1_stages(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/stages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/standard-fields - Required / visible / default settings of email, first name, last name and phone
+    def get_v1_standard_fields(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/standard-fields', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/subscription-channels - Channels a person can subscribe to, with the purposes each is consented for
@@ -4900,7 +6050,7 @@ module Hermetica
       request('GET', '/v1/template-gallery', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/templates
+    # GET /v1/templates - Filter by channel, folder, tag, text, creator (`createdBy=me`), format and creation date; sort newest, oldest, name or updated
     def get_v1_templates(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/templates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -4908,6 +6058,11 @@ module Hermetica
     # GET /v1/templates/{id}
     def get_v1_templates_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/templates/{id}/client-preview-runs - Inbox preview run history for a template, newest first
+    def get_v1_templates_by_id_client_preview_runs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/templates/{id}/client-preview-runs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/templates/{id}/default-content - The fill-in parts of the current version: each block of a block design, or each marked region of HTML
@@ -4923,6 +6078,11 @@ module Hermetica
     # GET /v1/templates/{id}/languages/{locale}
     def get_v1_templates_by_id_languages_by_locale(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/templates/{id}/languages/{locale}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/templates/{id}/optimizer - Writing checks on the saved version, weighed by how similar senders' email campaigns perform (peer benchmarks, or the static reference range
+    def get_v1_templates_by_id_optimizer(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/templates/{id}/optimizer', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/templates/{id}/publish-status - Live version, unpublished changes and versions waiting for approval
@@ -4980,7 +6140,7 @@ module Hermetica
       request('GET', '/v1/topic-groups/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # GET /v1/topics
+    # GET /v1/topics - Topics; `groupId` filters by group, `counts=true` adds how many people are subscribed to each
     def get_v1_topics(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/topics', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -5043,6 +6203,11 @@ module Hermetica
     # GET /v1/transactional/definitions/{id}/translations
     def get_v1_transactional_definitions_by_id_translations(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/transactional/definitions/{id}/translations', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/transactional/metadata-fields - Declared metadata keys shown as message-log columns, each with an optional view template ({{ value }})
+    def get_v1_transactional_metadata_fields(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/transactional/metadata-fields', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/transactional/metadata-keys
@@ -5108,6 +6273,16 @@ module Hermetica
     # GET /v1/user-groups/{id}
     def get_v1_user_groups_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/user-groups/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/user-groups/{id}/access
+    def get_v1_user_groups_by_id_access(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/user-groups/{id}/access', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/version - Running version, whether a newer release exists, and the operator banner
+    def get_v1_version(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/version', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/web-feeds
@@ -5205,6 +6380,11 @@ module Hermetica
       request('GET', '/v1/webhook-templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/webhook-templates/{id}/inputs/{key}/options - Dropdown values for an enum input (fixed options, or loaded from its options URL)
+    def get_v1_webhook_templates_by_id_inputs_by_key_options(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/webhook-templates/{id}/inputs/{key}/options', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/webhook-templates/{id}/revisions - Every saved state of a call template / custom action, newest first
     def get_v1_webhook_templates_by_id_revisions(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/webhook-templates/{id}/revisions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5213,6 +6393,26 @@ module Hermetica
     # GET /v1/webhook-templates/{id}/revisions/{revisionId}
     def get_v1_webhook_templates_by_id_revisions_by_revision_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/webhook-templates/{id}/revisions/{revisionId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/whatsapp/connections/{connectionId}/account - Business and phone-number status, messaging-limit tier and the raw quality rating, read live from Meta
+    def get_v1_whatsapp_connections_by_connection_id_account(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/whatsapp/connections/{connectionId}/account', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/whatsapp/flows - WhatsApp Flows
+    def get_v1_whatsapp_flows(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/whatsapp/flows', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/whatsapp/flows/{id} - One Flow
+    def get_v1_whatsapp_flows_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/whatsapp/flows/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/whatsapp/flows/{id}/runs - Who was sent the Flow and what they answered
+    def get_v1_whatsapp_flows_by_id_runs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/whatsapp/flows/{id}/runs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/whatsapp/stats - WhatsApp delivery numbers per day (accepted, delivered, failed, blocked, replies) with the reasons messages were blocked; default last 30 da
@@ -5225,6 +6425,11 @@ module Hermetica
       request('GET', '/v1/whatsapp/templates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/whatsapp/templates/{id} - One registered template with its approval status (refresh=true pulls the latest status from the provider first)
+    def get_v1_whatsapp_templates_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/whatsapp/templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/whatsapp/window/{id} - Is the 24-hour session window open for this contact (can free text be sent)?
     def get_v1_whatsapp_window_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/whatsapp/window/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5233,6 +6438,16 @@ module Hermetica
     # GET /v1/white-label - Product name, logo and colours shown in the app and on hosted pages
     def get_v1_white_label(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/white-label', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/workflow-custom-types - The workspace's own action and trigger types (palette and trigger picker)
+    def get_v1_workflow_custom_types(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/workflow-custom-types', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/workflow-custom-types/{id}
+    def get_v1_workflow_custom_types_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/workflow-custom-types/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/workflows
@@ -5263,6 +6478,11 @@ module Hermetica
     # GET /v1/workflows/{id}/enrollments/{enrollmentId}/steps - The step trail of one enrollment
     def get_v1_workflows_by_id_enrollments_by_enrollment_id_steps(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/workflows/{id}/enrollments/{enrollmentId}/steps', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/workflows/{id}/entry-skips - People who could not enter (journey not live, outside its window, no start step, profile gone, cap reached), newest first
+    def get_v1_workflows_by_id_entry_skips(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/workflows/{id}/entry-skips', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /v1/workflows/{id}/export
@@ -5370,6 +6590,16 @@ module Hermetica
       request('GET', '/v1/workspace/ip-allowlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # GET /v1/workspaces/current/resets
+    def get_v1_workspaces_current_resets(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/workspaces/current/resets', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /v1/workspaces/current/resets/{id}
+    def get_v1_workspaces_current_resets_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/v1/workspaces/current/resets/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # GET /v1/workspaces/current/schedule-for-removal - When this workspace will be erased, if its removal is scheduled
     def get_v1_workspaces_current_schedule_for_removal(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/workspaces/current/schedule-for-removal', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5378,6 +6608,31 @@ module Hermetica
     # GET /v1/workspace/test-mode
     def get_v1_workspace_test_mode(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('GET', '/v1/workspace/test-mode', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /wallet/apple/{ws}/v1/devices/{device}/registrations/{passType} - Serial numbers of this device's passes changed since the tag
+    def get_wallet_apple_by_ws_v1_devices_by_device_registrations_by_pass_type(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /wallet/apple/{ws}/v1/passes/{passType}/{serial} - The latest version of a pass
+    def get_wallet_apple_by_ws_v1_passes_by_pass_type_by_serial(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/wallet/apple/{ws}/v1/passes/{passType}/{serial}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /wallet/install/{token} - Add a pass to Apple Wallet (download) or Google Wallet (redirect)
+    def get_wallet_install_by_token(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/wallet/install/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /wallet/logo/{ws}/{file} - A programme's wallet logo (Google Wallet fetches it from here)
+    def get_wallet_logo_by_ws_by_file(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/wallet/logo/{ws}/{file}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # GET /webhooks/ads/meta/leadgen - Meta leadgen webhook verification handshake
+    def get_webhooks_ads_meta_leadgen(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('GET', '/webhooks/ads/meta/leadgen', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # GET /webhooks/{workspaceId}/{connectionId} - WhatsApp (Meta) webhook verification handshake
@@ -5410,9 +6665,34 @@ module Hermetica
       request('PATCH', '/v1/ads/audiences/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/ads/campaigns/{id} - Edit a draft campaign
+    def patch_v1_ads_campaigns_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/ads/campaigns/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/ads/lead-syncs/{id} - Pause or remap a lead-ad sync
+    def patch_v1_ads_lead_syncs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/ads/lead-syncs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/agency/clients/{workspaceId} - Rename a client workspace from the agency
     def patch_v1_agency_clients_by_workspace_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/agency/clients/{workspaceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/ai-agents/{id} - Rename, switch on or off, turn auto-send on or off, or change its settings
+    def patch_v1_ai_agents_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/ai-agents/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/ai-agents/{id}/guidances/{guidanceId}
+    def patch_v1_ai_agents_by_id_guidances_by_guidance_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/ai-agents/{id}/guidances/{guidanceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/ai-agents/items/{id} - Edit a pending draft before approving it
+    def patch_v1_ai_agents_items_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/ai-agents/items/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/analytics/attribution/settings - Conversion event, touch windows and model. Applies to conversions recorded from now on.
@@ -5453,6 +6733,11 @@ module Hermetica
     # PATCH /v1/assets/{id}
     def patch_v1_assets_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/assets/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/association-labels/{id}
+    def patch_v1_association_labels_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/association-labels/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/attributes/computed/{key}
@@ -5500,6 +6785,11 @@ module Hermetica
       request('PATCH', '/v1/business-goals/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/calendar-feeds/{id}
+    def patch_v1_calendar_feeds_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/calendar-feeds/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/calendar/mine/{id}
     def patch_v1_calendar_mine_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/calendar/mine/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5513,6 +6803,16 @@ module Hermetica
     # PATCH /v1/campaigns/{id}
     def patch_v1_campaigns_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/campaigns/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/campaigns/{id}/audiences/{audienceId}
+    def patch_v1_campaigns_by_id_audiences_by_audience_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/campaigns/{id}/audiences/{audienceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/campaigns/{id}/drafts/{draftId}
+    def patch_v1_campaigns_by_id_drafts_by_draft_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/campaigns/{id}/drafts/{draftId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/campaigns/{id}/feedback/{feedbackId}
@@ -5575,9 +6875,19 @@ module Hermetica
       request('PATCH', '/v1/commerce/stores/{storeId}/orders/{id}/lines/{lineId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/commerce/stores/{storeId}/products/{productId} - Change only the fields sent
+    def patch_v1_commerce_stores_by_store_id_products_by_product_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/commerce/stores/{storeId}/products/{productId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/commerce/stores/{storeId}/products/{productId}/images/{imageId}
     def patch_v1_commerce_stores_by_store_id_products_by_product_id_images_by_image_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/commerce/stores/{storeId}/products/{productId}/images/{imageId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId} - Change only the fields sent
+    def patch_v1_commerce_stores_by_store_id_products_by_product_id_variants_by_variant_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/connections/{id}
@@ -5630,6 +6940,11 @@ module Hermetica
       request('PATCH', '/v1/deliverability/rules/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/destinations/{id}
+    def patch_v1_destinations_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/destinations/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/emails/{id}/draft - Edit the draft; refused once the email is sending or sent
     def patch_v1_emails_by_id_draft(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/emails/{id}/draft', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5653,6 +6968,11 @@ module Hermetica
     # PATCH /v1/import-schedules/{id}
     def patch_v1_import_schedules_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/import-schedules/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/in-app-components/{id} - Edit a component
+    def patch_v1_in_app_components_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/in-app-components/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/in-app-messages/{id} - Edit an in-app message or change its status (draft, live, paused, archived)
@@ -5685,9 +7005,19 @@ module Hermetica
       request('PATCH', '/v1/leads/companies/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/leads/companies/{id}/notes/{noteId} - Edit a company note
+    def patch_v1_leads_companies_by_id_notes_by_note_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/leads/companies/{id}/notes/{noteId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/leads/companies/{id}/stage - Account stage and owner; written through to the outbound account so do-not-contact gates enrollment
     def patch_v1_leads_companies_by_id_stage(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/leads/companies/{id}/stage', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/leads/company-fields/{key}
+    def patch_v1_leads_company_fields_by_key(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/leads/company-fields/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/leads/providers/{id}
@@ -5713,6 +7043,26 @@ module Hermetica
     # PATCH /v1/lists/{id}
     def patch_v1_lists_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/lists/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/loyalty/programs/{id}
+    def patch_v1_loyalty_programs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/loyalty/programs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/loyalty/programs/{id}/rewards/{subId}
+    def patch_v1_loyalty_programs_by_id_rewards_by_sub_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/loyalty/programs/{id}/rewards/{subId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/loyalty/programs/{id}/rules/{subId}
+    def patch_v1_loyalty_programs_by_id_rules_by_sub_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/loyalty/programs/{id}/rules/{subId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/loyalty/programs/{id}/tiers/{subId}
+    def patch_v1_loyalty_programs_by_id_tiers_by_sub_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/loyalty/programs/{id}/tiers/{subId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/marketing-events/{id}
@@ -5745,7 +7095,7 @@ module Hermetica
       request('PATCH', '/v1/newsletter/engagement/replies/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # PATCH /v1/newsletter/engagement/surveys/{id} - Rename, describe, open or close
+    # PATCH /v1/newsletter/engagement/surveys/{id} - Rename, describe, open or close, link a list, set the thank-you, turn the anonymous link on or off, edit questions
     def patch_v1_newsletter_engagement_surveys_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/newsletter/engagement/surveys/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -5785,6 +7135,11 @@ module Hermetica
       request('PATCH', '/v1/object-types/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/operator/settings - Instance settings: sign-up open / waitlist / closed, required email verification for new accounts, a banner for every user
+    def patch_v1_operator_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/operator/settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/outbound/accounts/{id}
     def patch_v1_outbound_accounts_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/outbound/accounts/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5815,9 +7170,14 @@ module Hermetica
       request('PATCH', '/v1/outbound/sequences/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # PATCH /v1/outbound/tasks/{id} - Edit title, notes or due date of an open task
+    # PATCH /v1/outbound/tasks/{id} - Edit an open task: title, notes, due date, kind, type, links and reminder
     def patch_v1_outbound_tasks_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/outbound/tasks/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/page-sites/{id}
+    def patch_v1_page_sites_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/page-sites/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/postal-addresses/{id}
@@ -5830,7 +7190,7 @@ module Hermetica
       request('PATCH', '/v1/profiles/by/{idType}/{value}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # PATCH /v1/profiles/{id}
+    # PATCH /v1/profiles/{id} - Update a contact; `tags` adds tags and `subscriptions` sets email / SMS marketing status through the consent ledger
     def patch_v1_profiles_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/profiles/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -5845,12 +7205,17 @@ module Hermetica
       request('PATCH', '/v1/programs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/push/live/{id} - Update what the live notification shows
+    def patch_v1_push_live_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/push/live/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/referral-programs/{id}
     def patch_v1_referral_programs_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/referral-programs/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # PATCH /v1/reviews/{id} - Moderate: pending | published | rejected
+    # PATCH /v1/reviews/{id} - Moderate (pending | published | featured | unpublished | rejected), reply publicly, or edit rating, text, images and type
     def patch_v1_reviews_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/reviews/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -5880,6 +7245,11 @@ module Hermetica
       request('PATCH', '/v1/sending-domains/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/site-messages/{id} - Edit, publish (status) or archive
+    def patch_v1_site_messages_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/site-messages/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/sites/{id} - Rename, change domain, or enable/disable tracking (the pixel)
     def patch_v1_sites_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/sites/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5905,6 +7275,11 @@ module Hermetica
       request('PATCH', '/v1/snippets/{id}/unlock', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/social/posts/{id} - Edit or reschedule a draft or scheduled post
+    def patch_v1_social_posts_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/social/posts/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/sponsors/advertisers/{id} - Edit an advertiser
     def patch_v1_sponsors_advertisers_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/sponsors/advertisers/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5918,6 +7293,11 @@ module Hermetica
     # PATCH /v1/sponsors/creatives/{id} - Edit a creative; it goes back to draft and needs approval again
     def patch_v1_sponsors_creatives_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/sponsors/creatives/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/sql-sources/{id} - Edit; a blank password or token keeps the stored one
+    def patch_v1_sql_sources_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/sql-sources/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/stages/{id} - Rename or reweight; a rename carries the people in it
@@ -5965,6 +7345,11 @@ module Hermetica
       request('PATCH', '/v1/transactional/definitions/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/transactional/metadata-fields/{name}
+    def patch_v1_transactional_metadata_fields_by_name(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/transactional/metadata-fields/{name}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/translations/{id}
     def patch_v1_translations_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/translations/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -5985,9 +7370,19 @@ module Hermetica
       request('PATCH', '/v1/webhook-templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PATCH /v1/whatsapp/flows/{id} - Edit a Flow (its JSON only before publishing)
+    def patch_v1_whatsapp_flows_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/whatsapp/flows/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PATCH /v1/whatsapp/templates/{id} - Edit a draft or rejected template (any field) or an approved one (merge values only); the linked Hermetica template follows
     def patch_v1_whatsapp_templates_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PATCH', '/v1/whatsapp/templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PATCH /v1/workflow-custom-types/{id} - Rename, change fields, or archive (archived types leave the palette but keep running)
+    def patch_v1_workflow_custom_types_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PATCH', '/v1/workflow-custom-types/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PATCH /v1/workflows/{id}
@@ -6015,9 +7410,39 @@ module Hermetica
       request('PATCH', '/v1/workspace', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /book/{ws}/{slug} - Book a time on a booking page (consent is recorded only when the visitor ticks the box)
+    def post_book_by_ws_by_slug(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/book/{ws}/{slug}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /client/geofence-events - The app entered, left or dwelled in a geofence: recorded as geofence_entered / geofence_exited / geofence_dwelled
+    def post_client_geofence_events(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/client/geofence-events', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /client/in-app-events - Report impressions, clicks and dismissals
     def post_client_in_app_events(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/client/in-app-events', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /client/in-app-trackers/{id}/events - The component reports an event; the journey waiting on it moves on
+    def post_client_in_app_trackers_by_id_events(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/client/in-app-trackers/{id}/events', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /client/inbox/{id}/delete - Delete an inbox message for the contact
+    def post_client_inbox_by_id_delete(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/client/inbox/{id}/delete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /client/inbox/{id}/read - Mark an inbox message read or unread
+    def post_client_inbox_by_id_read(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/client/inbox/{id}/read', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /client/push-live-tokens - The app reports an ActivityKit push-to-start token or a running activity's update token
+    def post_client_push_live_tokens(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/client/push-live-tokens', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /client/push-tokens - Register a device push token for a profile (iOS, Android, or a web push subscription)
@@ -6040,6 +7465,11 @@ module Hermetica
       request('POST', '/e/link/{ws}/{kind}/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /e/s/{ws}/{token} - Submit answers through the anonymous survey link
+    def post_esby_ws_by_token(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/e/s/{ws}/{token}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /e/survey/{ws}/{id} - Submit (or change) survey answers
     def post_esurvey_by_ws_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/e/survey/{ws}/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6048,6 +7478,51 @@ module Hermetica
     # POST /e/v/{poll}/{opt}/{*} - Record a poll vote from an email link (one per reader, changeable)
     def post_evby_poll_by_opt_wildcard(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/e/v/{poll}/{opt}/{*}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/api/link - Email a hub sign-in link (same reply whether or not the address is known)
+    def post_hub_by_ws_api_link(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/api/link', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/api/redeem - Spend the shopper's points on a reward. Send your own `key` (8-64 of A-Z a-z 0-9 _ -) per redemption: a retry with the same key spends once
+    def post_hub_by_ws_api_redeem(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/api/redeem', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/api/session - Swap the emailed link token for a 7-day session token
+    def post_hub_by_ws_api_session(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/api/session', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/api/wishlist
+    def post_hub_by_ws_api_wishlist(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/api/wishlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/redeem
+    def post_hub_by_ws_redeem(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/redeem', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/signin
+    def post_hub_by_ws_signin(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/signin', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/signout
+    def post_hub_by_ws_signout(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/signout', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/wishlist
+    def post_hub_by_ws_wishlist(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/wishlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /hub/{ws}/wishlist/remove
+    def post_hub_by_ws_wishlist_remove(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/hub/{ws}/wishlist/remove', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /ingest/v1/back-in-stock - Ask to be notified when a catalog product is back in stock or drops in price
@@ -6080,9 +7555,19 @@ module Hermetica
       request('POST', '/ingest/v1/reviews', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /ingest/v1/reviews/media - Upload one review photo (multipart field "file"; JPEG, PNG, WebP or GIF); send the returned URL in the review's images
+    def post_ingest_v1_reviews_media(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/ingest/v1/reviews/media', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /ingest/v1/segment - Segment/RudderStack-compatible track, identify, page
     def post_ingest_v1_segment(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/ingest/v1/segment', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /ingest/v1/site-messages/{id}/shown - The visitor saw a site message (a queued one stops showing)
+    def post_ingest_v1_site_messages_by_id_shown(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/ingest/v1/site-messages/{id}/shown', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /ingest/v1/subscribe - Subscribe an email/phone with the consent text the visitor saw
@@ -6093,6 +7578,11 @@ module Hermetica
     # POST /l/c/{*} - Confirm list double opt-in; idempotent
     def post_lcwildcard(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/l/c/{*}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /mcp - Hosted MCP server (JSON-RPC over HTTP). Authenticate with a secret key; tools the key's scopes do not cover are hidden and refused.
+    def post_mcp(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/mcp', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /oauth/revoke - RFC 7009 token revocation
@@ -6225,6 +7715,11 @@ module Hermetica
       request('POST', '/scim/v2/Users', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /u/resubscribe/{*} - Undo an unsubscribe from the same signed link: records a new opt-in in the consent ledger and lifts only that unsubscribe
+    def post_uresubscribe_wildcard(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/u/resubscribe/{*}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /u/{*} - Unsubscribe (RFC 8058 one-click); idempotent
     def post_uwildcard(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/u/{*}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6250,6 +7745,11 @@ module Hermetica
       request('POST', '/v1/ads/accounts/{id}/conversions/test', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/ads/accounts/{id}/objects/refresh - Pull ad objects and insights now
+    def post_v1_ads_accounts_by_id_objects_refresh(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ads/accounts/{id}/objects/refresh', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/ads/audiences - Sync a segment to an ad platform audience; the first run starts at once
     def post_v1_ads_audiences(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/ads/audiences', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6258,6 +7758,31 @@ module Hermetica
     # POST /v1/ads/audiences/{id}/sync - Sync now
     def post_v1_ads_audiences_by_id_sync(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/ads/audiences/{id}/sync', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ads/campaigns - Draft a campaign (budget, schedule, targeting, creative); nothing is sent until it is pushed
+    def post_v1_ads_campaigns(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ads/campaigns', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ads/campaigns/{id}/budget - Change the daily budget and end date
+    def post_v1_ads_campaigns_by_id_budget(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ads/campaigns/{id}/budget', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ads/campaigns/{id}/push - Create the campaign on the platform (paused)
+    def post_v1_ads_campaigns_by_id_push(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ads/campaigns/{id}/push', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ads/campaigns/{id}/status - Activate, pause or archive the campaign on the platform
+    def post_v1_ads_campaigns_by_id_status(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ads/campaigns/{id}/status', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ads/lead-syncs - Sync a lead-ad form into a form. Consent is recorded only from the mapped consent checkboxes
+    def post_v1_ads_lead_syncs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ads/lead-syncs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/ads/oauth/{platform}/start - Start the sign-in: returns the platform authorize URL (state is bound to this workspace and user)
@@ -6288,6 +7813,11 @@ module Hermetica
     # POST /v1/agency/clients/{workspaceId}/delete - Schedule deletion after a grace period; the client is paused immediately and resume cancels it
     def post_v1_agency_clients_by_workspace_id_delete(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/agency/clients/{workspaceId}/delete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/agency/clients/{workspaceId}/handoff - Single-use login link into a client workspace (valid 5 minutes, audited in the client workspace)
+    def post_v1_agency_clients_by_workspace_id_handoff(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/agency/clients/{workspaceId}/handoff', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/agency/clients/{workspaceId}/pause - Pause a client workspace: every send request is refused until it is resumed
@@ -6340,6 +7870,41 @@ module Hermetica
       request('POST', '/v1/agency/move-sequence', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/agency/transfer - Copy a segment, list or form from the current workspace into another workspace of the same agency (templates and journeys: /v1/agency/copy-t
+    def post_v1_agency_transfer(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/agency/transfer', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ai-agents - Create an agent. It starts switched off and review-only
+    def post_v1_ai_agents(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ai-agents', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ai-agents/{id}/guidances - Add a guidance rule (at most 10 per agent)
+    def post_v1_ai_agents_by_id_guidances(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ai-agents/{id}/guidances', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ai-agents/{id}/run - Run the agent now instead of waiting for its next pass. Drafts go to the review feed unless auto-send is on
+    def post_v1_ai_agents_by_id_run(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ai-agents/{id}/run', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ai-agents/items/bulk-decide
+    def post_v1_ai_agents_items_bulk_decide(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ai-agents/items/bulk-decide', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ai-agents/items/bulk-delete - Delete items from the feed; a deleted draft is never sent
+    def post_v1_ai_agents_items_bulk_delete(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ai-agents/items/bulk-delete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ai-agents/items/{id}/decide - Approve (sends through consent and suppression; a blocked recipient ends as blocked) or reject (nothing is sent)
+    def post_v1_ai_agents_items_by_id_decide(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ai-agents/items/{id}/decide', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/ai/body-from-brief
     def post_v1_ai_body_from_brief(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/ai/body-from-brief', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6358,6 +7923,11 @@ module Hermetica
     # POST /v1/ai/first-line
     def post_v1_ai_first_line(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/ai/first-line', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/ai/flow-builds/{id}/saved - Record which flow a build was saved as (the flow itself is created through /v1/workflows)
+    def post_v1_ai_flow_builds_by_id_saved(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/ai/flow-builds/{id}/saved', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/ai/flow-edit - Propose a changed version of a flow from a plain-words instruction; validated, never saved (the editor saves it as a draft after the user ac
@@ -6460,6 +8030,11 @@ module Hermetica
       request('POST', '/v1/analytics/dashboards/{id}/clone', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/analytics/dashboards/import - Create a dashboard and its reports from an exported definition
+    def post_v1_analytics_dashboards_import(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/analytics/dashboards/import', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/analytics/dashboards/owners/batch/update - Reassign dashboards to another member (null = unassigned)
     def post_v1_analytics_dashboards_owners_batch_update(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/analytics/dashboards/owners/batch/update', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6473,6 +8048,11 @@ module Hermetica
     # POST /v1/analytics/predictions/run - Refit the BG/NBD + Gamma-Gamma model (kept only if it beats the naive baseline on a holdout) and rescore every customer now; scores also ref
     def post_v1_analytics_predictions_run(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/analytics/predictions/run', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/analytics/records/run - Run a record-source report without saving it: pick columns, filter, order and limit
+    def post_v1_analytics_records_run(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/analytics/records/run', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/analytics/reports
@@ -6515,7 +8095,7 @@ module Hermetica
       request('POST', '/v1/asset-folders', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/assets - Upload a file (multipart field "file"): PNG, JPEG, GIF, WebP up to 5 MB; PDF and MP4 up to 25 MB
+    # POST /v1/assets - Upload a file (multipart field "file", optional fields folderId, filename, access first). Images up to 5 MB; other allowed types (Settings >
     def post_v1_assets(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/assets', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -6550,6 +8130,16 @@ module Hermetica
       request('POST', '/v1/assets/uploads/{id}/complete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/association-labels
+    def post_v1_association_labels(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/association-labels', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/associations/batch - Up to 100 associations in one call; any failure rolls back all
+    def post_v1_associations_batch(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/associations/batch', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/attributes/computed
     def post_v1_attributes_computed(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/attributes/computed', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6580,6 +8170,11 @@ module Hermetica
       request('POST', '/v1/attributes/fields/{key}/type-check', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/auth/handoff - Redeem a single-use agency hand-off token: opens the client workspace in a session bound to it
+    def post_v1_auth_handoff(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/auth/handoff', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/auth/login
     def post_v1_auth_login(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/auth/login', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6605,7 +8200,17 @@ module Hermetica
       request('POST', '/v1/auth/signup', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/batches - Run up to 50 API calls in one request, in order, each with your own credentials and permissions (not atomic)
+    # POST /v1/auth/verify-email - Confirm an email address with the link token
+    def post_v1_auth_verify_email(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/auth/verify-email', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/auth/waitlist - Join the waitlist while sign-up is invitation-only
+    def post_v1_auth_waitlist(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/auth/waitlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/batches - Queue up to 1,000 API calls; they run in order in the background (not atomic). Poll the batch or subscribe to batch.finished
     def post_v1_batches(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/batches', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -6675,6 +8280,16 @@ module Hermetica
       request('POST', '/v1/business-goals/batch/restore', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/calendar-feeds - Create a feed; the response holds the only copy of its subscription URL
+    def post_v1_calendar_feeds(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/calendar-feeds', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/calendar-feeds/{id}/rotate - New subscription URL; the old one stops working
+    def post_v1_calendar_feeds_by_id_rotate(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/calendar-feeds/{id}/rotate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/calendar/mine - Add an entry to my calendar
     def post_v1_calendar_mine(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/calendar/mine', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6700,6 +8315,11 @@ module Hermetica
       request('POST', '/v1/campaigns/bulk-delete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/campaigns/bulk-update - Move, re-own, archive or tag many campaigns; each one that cannot change is reported
+    def post_v1_campaigns_bulk_update(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/bulk-update', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/campaigns/{id}/ab-rollout
     def post_v1_campaigns_by_id_ab_rollout(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/campaigns/{id}/ab-rollout', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6708,6 +8328,21 @@ module Hermetica
     # POST /v1/campaigns/{id}/ai-summary - A plain-language summary of the campaign report, written from its own figures only. Needs AI assist switched on; sends the figures (no recip
     def post_v1_campaigns_by_id_ai_summary(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/campaigns/{id}/ai-summary', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/campaigns/{id}/archive
+    def post_v1_campaigns_by_id_archive(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/{id}/archive', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/campaigns/{id}/audiences
+    def post_v1_campaigns_by_id_audiences(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/{id}/audiences', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/campaigns/{id}/audiences/{audienceId}/clone
+    def post_v1_campaigns_by_id_audiences_by_audience_id_clone(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/{id}/audiences/{audienceId}/clone', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/campaigns/{id}/cancel
@@ -6730,6 +8365,11 @@ module Hermetica
       request('POST', '/v1/campaigns/{id}/draft/reset', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/campaigns/{id}/drafts/decide - Approve (send) or reject the selected drafts
+    def post_v1_campaigns_by_id_drafts_decide(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/{id}/drafts/decide', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/campaigns/{id}/feedback
     def post_v1_campaigns_by_id_feedback(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/campaigns/{id}/feedback', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -6748,6 +8388,11 @@ module Hermetica
     # POST /v1/campaigns/{id}/pause
     def post_v1_campaigns_by_id_pause(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/campaigns/{id}/pause', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/campaigns/{id}/postcard/proof - Render both sides for one contact (or sample data) and show the address it would go to
+    def post_v1_campaigns_by_id_postcard_proof(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/{id}/postcard/proof', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/campaigns/{id}/recipient-estimations
@@ -6815,9 +8460,19 @@ module Hermetica
       request('POST', '/v1/campaigns/{id}/triggers/{triggerId}/cancel', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/campaigns/{id}/unarchive
+    def post_v1_campaigns_by_id_unarchive(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/{id}/unarchive', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/campaigns/{id}/unschedule
     def post_v1_campaigns_by_id_unschedule(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/campaigns/{id}/unschedule', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/campaigns/{id}/variants/grid - Multivariate test: one variant per combination of templates, subjects, from names and preview texts
+    def post_v1_campaigns_by_id_variants_grid(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/campaigns/{id}/variants/grid', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/campaigns/query - Filter campaigns with a typed where / orderBy / limit / offset (fields are an allowlist; read "fields" in the result)
@@ -6865,9 +8520,14 @@ module Hermetica
       request('POST', '/v1/catalog/items/{id}/variants', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/catalog/subscriptions - Notify a profile (catalog.back_in_stock / catalog.price_drop event) when the product changes
+    # POST /v1/catalog/subscriptions - Notify a profile (by id, email or phone; one variant or the whole product; by email, SMS or push) when the product is back in stock or drops
     def post_v1_catalog_subscriptions(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/catalog/subscriptions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/client-previews/{externalId} - Poll the preview service for a run and save its latest result
+    def post_v1_client_previews_by_external_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/client-previews/{externalId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/collections
@@ -6878,6 +8538,11 @@ module Hermetica
     # POST /v1/commerce/activate - Turn ecommerce on: creates the first store if the workspace has none (safe to repeat)
     def post_v1_commerce_activate(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/commerce/activate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/commerce/orders/{id}/ai-summary - A plain-language status of one order (payment, fulfilment, refunds, contents). Needs AI assist switched on; the shipping address and links n
+    def post_v1_commerce_orders_by_id_ai_summary(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/commerce/orders/{id}/ai-summary', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/commerce/stores
@@ -6920,9 +8585,19 @@ module Hermetica
       request('POST', '/v1/commerce/stores/{storeId}/orders/{id}/lines', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/commerce/stores/{storeId}/products - Add a product to this store under its store id
+    def post_v1_commerce_stores_by_store_id_products(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/commerce/stores/{storeId}/products', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/commerce/stores/{storeId}/products/{productId}/images
     def post_v1_commerce_stores_by_store_id_products_by_product_id_images(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/commerce/stores/{storeId}/products/{productId}/images', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/commerce/stores/{storeId}/products/{productId}/variants - Add a variant to a store product under its store id
+    def post_v1_commerce_stores_by_store_id_products_by_product_id_variants(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/commerce/stores/{storeId}/products/{productId}/variants', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/connections
@@ -7065,6 +8740,26 @@ module Hermetica
       request('POST', '/v1/deliverability/placement-tests/{id}/stop', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/deliverability/recommendations/{id}/complete
+    def post_v1_deliverability_recommendations_by_id_complete(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/deliverability/recommendations/{id}/complete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/deliverability/recommendations/{id}/dismiss
+    def post_v1_deliverability_recommendations_by_id_dismiss(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/deliverability/recommendations/{id}/dismiss', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/deliverability/recommendations/{id}/pause-14-days - Pause sending from the affected mailboxes for 14 days; they resume on their own. Repeating it keeps the first resume date
+    def post_v1_deliverability_recommendations_by_id_pause14_days(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/deliverability/recommendations/{id}/pause-14-days', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/deliverability/recommendations/{id}/pause-mailboxes - Pause the mailboxes on the affected domain until you resume them. Repeating it changes nothing
+    def post_v1_deliverability_recommendations_by_id_pause_mailboxes(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/deliverability/recommendations/{id}/pause-mailboxes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/deliverability/rules
     def post_v1_deliverability_rules(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/deliverability/rules', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -7080,9 +8775,24 @@ module Hermetica
       request('POST', '/v1/deliverability/sources', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/deliverability/spam-report - Spam test of a draft: score by section (subject, wording, links, formatting) with a fix per finding
+    # POST /v1/deliverability/spam-report - Spam test of a draft: score by section (subject, wording, links, formatting) with a fix per finding. Uses the operator's SpamAssassin (SPAMD
     def post_v1_deliverability_spam_report(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/deliverability/spam-report', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/destinations - Add a destination; profiles that opted out of tracking are never forwarded
+    def post_v1_destinations(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/destinations', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/destinations/{id}/test - Send one test event to the destination
+    def post_v1_destinations_by_id_test(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/destinations/{id}/test', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/do-not-contact - Add do-not-contact values; phones block SMS and WhatsApp, LinkedIn URLs block LinkedIn outreach
+    def post_v1_do_not_contact(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/do-not-contact', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/eligibility/check - Debug: would this send be allowed?
@@ -7090,9 +8800,54 @@ module Hermetica
       request('POST', '/v1/eligibility/check', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/embed-api/{token}/ai/brief
+    def post_v1_embed_api_by_token_ai_brief(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/ai/brief', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embed-api/{token}/ai/rewrite
+    def post_v1_embed_api_by_token_ai_rewrite(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/ai/rewrite', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embed-api/{token}/ai/subjects
+    def post_v1_embed_api_by_token_ai_subjects(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/ai/subjects', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embed-api/{token}/ai/translate
+    def post_v1_embed_api_by_token_ai_translate(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/ai/translate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embed-api/{token}/journey/publish - Publish the saved draft as a new version; body.inFlight chooses stay / migrate / exit for enrollments already inside
+    def post_v1_embed_api_by_token_journey_publish(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/journey/publish', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embed-api/{token}/journey/simulate - Dry-run the journey (or an unsaved definition) for sample profiles; nothing is sent or stored
+    def post_v1_embed_api_by_token_journey_simulate(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/journey/simulate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embed-api/{token}/template/test-send - Send the template's current version to one of the workspace's seed lists (normal routing, consent and suppression apply)
+    def post_v1_embed_api_by_token_template_test_send(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/template/test-send', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embed-api/{token}/template/versions
+    def post_v1_embed_api_by_token_template_versions(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embed-api/{token}/template/versions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/embeds - Signed, expiring link to embed a read-only segment or journey view in another site (only the given origin may frame it)
     def post_v1_embeds(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/embeds', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/embeds/editors - Signed, expiring link that embeds the template editor, the journey editor or the deliveries table in another site (only the given origin may
+    def post_v1_embeds_editors(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/embeds/editors', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/event-definitions - Declare an event (and optionally its properties) before it is first sent
@@ -7120,6 +8875,11 @@ module Hermetica
       request('POST', '/v1/events/batch/items', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/events/export-jobs - Every event matching the GET /v1/events filters as a CSV file, prepared in the background (poll GET /v1/exports/:id for the download link)
+    def post_v1_events_export_jobs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/events/export-jobs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/experiments
     def post_v1_experiments(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/experiments', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -7130,7 +8890,7 @@ module Hermetica
       request('POST', '/v1/experiments/{id}/conclude', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/exports - Export a segment, a list or all profiles to CSV; poll GET /v1/exports/:id for the signed download URL
+    # POST /v1/exports - Export a segment, a list or all profiles to CSV, NDJSON or XLSX, with chosen columns (`attributes.<key>` for a custom property); poll GET /v
     def post_v1_exports(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/exports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -7138,6 +8898,16 @@ module Hermetica
     # POST /v1/exports/activity - CSV export of the profile activity timeline (poll GET /v1/exports/:id)
     def post_v1_exports_activity(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/exports/activity', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/exports/clicks - Every human link click with its message and URL, as CSV (poll GET /v1/exports/:id)
+    def post_v1_exports_clicks(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/exports/clicks', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/exports/message-events - Every message event (delivered, open, click, bounce ...) with its message, as CSV (poll GET /v1/exports/:id)
+    def post_v1_exports_message_events(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/exports/message-events', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/exports/suppressions - CSV export of suppressions (rejects)
@@ -7205,6 +8975,16 @@ module Hermetica
       request('POST', '/v1/hooks/subscribe', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/identifier-blocks/check - Whether an email, phone or external id is blocked
+    def post_v1_identifier_blocks_check(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/identifier-blocks/check', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/identifier-blocks/unblock - Allow a blocked identifier to be added again (admin; suppressions stay)
+    def post_v1_identifier_blocks_unblock(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/identifier-blocks/unblock', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/identify
     def post_v1_identify(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/identify', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -7270,9 +9050,24 @@ module Hermetica
       request('POST', '/v1/imports/json', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/imports/url - One-off import of a CSV at an https URL: events, object records or relationships (poll GET /v1/jobs)
+    def post_v1_imports_url(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/imports/url', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/in-app-components - Define a component the app renders natively (its fields and the events it reports)
+    def post_v1_in_app_components(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/in-app-components', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/in-app-messages - Create an in-app message (draft)
     def post_v1_in_app_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/in-app-messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/in-app-messages/{id}/send - Hold a live in-app message for one contact (shown on their next visit). Needs an idempotency key
+    def post_v1_in_app_messages_by_id_send(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/in-app-messages/{id}/send', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/inbound/domains - Add an inbound domain; point its MX at expectedMx, then call /check
@@ -7295,9 +9090,24 @@ module Hermetica
       request('POST', '/v1/inbound/simulate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/inbox-messages - Send a transactional message into a contact's in-app inbox. Needs an idempotency key
+    def post_v1_inbox_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/inbox-messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/integrations/connections
     def post_v1_integrations_connections(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/integrations/connections', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/integrations/connections/{id}/crm/imports - Import (or re-import) the members of a CRM source; no consent is granted by importing
+    def post_v1_integrations_connections_by_id_crm_imports(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/integrations/connections/{id}/crm/imports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/integrations/connections/{id}/crm/users/refresh - Read the CRM users and match new ones to members by email
+    def post_v1_integrations_connections_by_id_crm_users_refresh(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/integrations/connections/{id}/crm/users/refresh', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/integrations/connections/{id}/declarative/rotate-webhook-secret - Generate a new webhook secret; the new value is returned once and the old one stops working
@@ -7345,9 +9155,24 @@ module Hermetica
       request('POST', '/v1/integrations/declarative/connect', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/integrations/google/start - Start a Google sign-in that saves a Sheets grant under the named secret; the access token is refreshed automatically
+    def post_v1_integrations_google_start(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/integrations/google/start', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/integrations/hubspot/install - Start the HubSpot OAuth install: creates the (disabled) connection and returns the authorize URL
     def post_v1_integrations_hubspot_install(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/integrations/hubspot/install', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/integrations/packages - Install one catalogue package version; unsigned, mis-signed or unreviewed packages are refused
+    def post_v1_integrations_packages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/integrations/packages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/integrations/packages/{packageId}/upgrade - Move an installed package (and every connection using it) to another verified version
+    def post_v1_integrations_packages_by_package_id_upgrade(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/integrations/packages/{packageId}/upgrade', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/integrations/warehouse/rows - Reverse-ETL: upsert profiles and events from warehouse rows
@@ -7365,6 +9190,16 @@ module Hermetica
       request('POST', '/v1/invitations/{id}/resend', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/invitations/decline - Decline an invitation (the link stops working)
+    def post_v1_invitations_decline(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/invitations/decline', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/landing-page-clusters - Group a pillar page and its supporting pages; missing links between them are listed
+    def post_v1_landing_page_clusters(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/landing-page-clusters', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/landing-page-folders
     def post_v1_landing_page_folders(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/landing-page-folders', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -7380,7 +9215,7 @@ module Hermetica
       request('POST', '/v1/landing-page-folders/{id}/revisions/{revisionId}/restore', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/landing-pages
+    # POST /v1/landing-pages - Create a page; `template_id` starts it from a preset when `doc` is left out
     def post_v1_landing_pages(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/landing-pages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -7403,6 +9238,11 @@ module Hermetica
     # POST /v1/landing-pages/{id}/ab/variants - Add a copy as a new arm (even split); publish it to start serving
     def post_v1_landing_pages_by_id_ab_variants(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/landing-pages/{id}/ab/variants', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/landing-pages/{id}/archive - Hide the page from the list and stop serving it
+    def post_v1_landing_pages_by_id_archive(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/landing-pages/{id}/archive', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/landing-pages/{id}/clone
@@ -7445,6 +9285,11 @@ module Hermetica
       request('POST', '/v1/landing-pages/{id}/schedule', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/landing-pages/{id}/unarchive
+    def post_v1_landing_pages_by_id_unarchive(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/landing-pages/{id}/unarchive', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/landing-pages/{id}/unpublish
     def post_v1_landing_pages_by_id_unpublish(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/landing-pages/{id}/unpublish', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -7460,7 +9305,37 @@ module Hermetica
       request('POST', '/v1/leads/companies', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/leads/companies/{id}/link
+    # POST /v1/leads/companies/batch - Create, edit, delete and link companies in one call (up to 500 operations); failures are reported per item
+    def post_v1_leads_companies_batch(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/batch', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/companies/bulk-delete - Delete up to 500 companies; do-not-contact blocks on their domains stay
+    def post_v1_leads_companies_bulk_delete(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/bulk-delete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/companies/{id}/contacts - Link several contacts at once, with optional link fields
+    def post_v1_leads_companies_by_id_contacts(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/{id}/contacts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/companies/{id}/crm/connect - Find the company in the CRM and link it without creating anything; empty fields and the owner are filled from the CRM
+    def post_v1_leads_companies_by_id_crm_connect(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/{id}/crm/connect', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/companies/{id}/crm/push - Create or update the company in the CRM (found by link, domain or name) and associate its contacts already in the CRM
+    def post_v1_leads_companies_by_id_crm_push(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/{id}/crm/push', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/companies/{id}/files - Upload a file (multipart field "file": PDF, image, text, CSV, Office or ZIP, up to 25 MB)
+    def post_v1_leads_companies_by_id_files(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/{id}/files', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/companies/{id}/link - Link a contact (or change its link: primary flag, job title, role). A contact can be linked to several companies; one is primary
     def post_v1_leads_companies_by_id_link(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/leads/companies/{id}/link', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -7473,6 +9348,11 @@ module Hermetica
     # POST /v1/leads/companies/{id}/notes
     def post_v1_leads_companies_by_id_notes(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/leads/companies/{id}/notes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/companies/{id}/score - Add (or with a negative delta, take) account score points
+    def post_v1_leads_companies_by_id_score(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/{id}/score', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/leads/companies/{id}/source-contacts - Find contacts at an account. With no titles given, the AI assistant proposes the buyer titles first
@@ -7495,6 +9375,11 @@ module Hermetica
       request('POST', '/v1/leads/companies/import', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/leads/companies/import-mapped - Import parsed CSV rows with a column mapping (built-in and custom company fields); existing domains are skipped or updated
+    def post_v1_leads_companies_import_mapped(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/companies/import-mapped', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/leads/companies/query - Filter companies with a typed where / orderBy / limit / offset (fields are an allowlist; read "fields" in the result)
     def post_v1_leads_companies_query(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/leads/companies/query', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -7503,6 +9388,11 @@ module Hermetica
     # POST /v1/leads/companies/unify-accounts - Fold outbound accounts into lead companies by domain, keeping their status, owner and website
     def post_v1_leads_companies_unify_accounts(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/leads/companies/unify-accounts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/leads/company-fields
+    def post_v1_leads_company_fields(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/leads/company-fields', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/leads/company-lists
@@ -7660,6 +9550,61 @@ module Hermetica
       request('POST', '/v1/lists/{id}/restore', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/looker/data
+    def post_v1_looker_data(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/looker/data', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/looker/schema
+    def post_v1_looker_schema(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/looker/schema', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs
+    def post_v1_loyalty_programs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs/{id}/adjust - Add or remove points by hand (send `key` to make a retry count once)
+    def post_v1_loyalty_programs_by_id_adjust(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs/{id}/adjust', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs/{id}/passes - Issue (or fetch) a member card or reward pass and its install links
+    def post_v1_loyalty_programs_by_id_passes(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs/{id}/passes', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs/{id}/passes/{serial}/replace-link - Revoke a pass's install link and return a new one (a card already added to a wallet keeps working)
+    def post_v1_loyalty_programs_by_id_passes_by_serial_replace_link(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs/{id}/passes/{serial}/replace-link', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs/{id}/redeem - Spend points on a reward; returns the coupon code
+    def post_v1_loyalty_programs_by_id_redeem(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs/{id}/redeem', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs/{id}/rewards - A reward costs points and hands out a code from a coupon pool
+    def post_v1_loyalty_programs_by_id_rewards(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs/{id}/rewards', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs/{id}/rules - Earn points on an event (orders are `purchase`)
+    def post_v1_loyalty_programs_by_id_rules(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs/{id}/rules', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/programs/{id}/tiers
+    def post_v1_loyalty_programs_by_id_tiers(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/programs/{id}/tiers', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/loyalty/vouchers/{id}/use - Mark a reward code used (also redeems the coupon code)
+    def post_v1_loyalty_vouchers_by_id_use(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/loyalty/vouchers/{id}/use', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/markdown/preview - Render Markdown the way a markdown template compiles it (live editor preview)
     def post_v1_markdown_preview(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/markdown/preview', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -7770,9 +9715,14 @@ module Hermetica
       request('POST', '/v1/metrics/aggregates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/metrics/ingest - A custom sender reports an open or click for a delivery id; feeds the same reports as tracked opens and clicks
+    # POST /v1/metrics/ingest - A custom sender reports an outcome for a delivery id (delivered, opened, clicked, converted, bounced, spammed, dropped, deferred, failed); i
     def post_v1_metrics_ingest(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/metrics/ingest', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/me/verify-email/resend - Mail a new confirmation link
+    def post_v1_me_verify_email_resend(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/me/verify-email/resend', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/migrations/hubspot/lists - Import HubSpot list memberships (list id, list name, email): one list per HubSpot list, existing contacts only, no consent granted
@@ -7838,6 +9788,16 @@ module Hermetica
     # POST /v1/newsletter/engagement/surveys - Create a poll (one question) or a survey
     def post_v1_newsletter_engagement_surveys(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/newsletter/engagement/surveys', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/newsletter/engagement/surveys/{id}/campaign - Draft an email campaign to the survey's list, with a new template that links each recipient to the survey (signed per reader)
+    def post_v1_newsletter_engagement_surveys_by_id_campaign(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/newsletter/engagement/surveys/{id}/campaign', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/newsletter/engagement/surveys/{id}/duplicate - Copy a survey (questions and settings, no answers)
+    def post_v1_newsletter_engagement_surveys_by_id_duplicate(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/newsletter/engagement/surveys/{id}/duplicate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/newsletter/gifts - Create a gift and its Stripe Checkout link for the buyer; the redeem link works once paid
@@ -7995,6 +9955,16 @@ module Hermetica
       request('POST', '/v1/newsletter/tiers/{id}/archive', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/notifications/read
+    def post_v1_notifications_read(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/notifications/read', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/notifications/read-all
+    def post_v1_notifications_read_all(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/notifications/read-all', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/oauth/authorize - The user approved: returns the redirect URL carrying the single-use code (PKCE S256 required)
     def post_v1_oauth_authorize(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/oauth/authorize', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -8035,6 +10005,11 @@ module Hermetica
       request('POST', '/v1/objects/{type}/query', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/objects/relationships/import - Link people (by externalId, email or phone) to object records (by type and externalId); a bad row is reported, the rest land
+    def post_v1_objects_relationships_import(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/objects/relationships/import', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/object-types
     def post_v1_object_types(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/object-types', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -8043,6 +10018,16 @@ module Hermetica
     # POST /v1/object-types/{id}/draft/publish
     def post_v1_object_types_by_id_draft_publish(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/object-types/{id}/draft/publish', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/object-types/{id}/share - Publish this workspace's object type to the organization (re-publishing bumps the version)
+    def post_v1_object_types_by_id_share(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/object-types/{id}/share', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/operator/waitlist/{id}/approve - Let this address sign up, and email them the sign-up link
+    def post_v1_operator_waitlist_by_id_approve(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/operator/waitlist/{id}/approve', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/ops/dlq/{queue}/{id}/replay - Move a failed job back to the queue (audited)
@@ -8068,6 +10053,16 @@ module Hermetica
     # POST /v1/outbound/blocklist/import - Import a CSV or pasted list of emails and domains
     def post_v1_outbound_blocklist_import(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/outbound/blocklist/import', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/outbound/booking-pages
+    def post_v1_outbound_booking_pages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/booking-pages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/outbound/bookings/{id}/cancel
+    def post_v1_outbound_bookings_by_id_cancel(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/bookings/{id}/cancel', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/outbound/calls - Log a finished call (outcome, duration, recording link)
@@ -8265,6 +10260,11 @@ module Hermetica
       request('POST', '/v1/outbound/personalize/{id}/apply', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/outbound/proposals/{id}/decide - Approve (optionally edited) or reject; approving sends through the normal path, consent and suppression rechecked
+    def post_v1_outbound_proposals_by_id_decide(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/proposals/{id}/decide', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/outbound/prospects/adopt
     def post_v1_outbound_prospects_adopt(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/outbound/prospects/adopt', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -8330,9 +10330,19 @@ module Hermetica
       request('POST', '/v1/outbound/sequences/{id}/duplicate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/outbound/sequences/{id}/enroll
+    # POST /v1/outbound/sequences/{id}/enroll - Enroll chosen prospects and / or every member of a list (listId: all of its members)
     def post_v1_outbound_sequences_by_id_enroll(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/outbound/sequences/{id}/enroll', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/outbound/sequences/{id}/enroll-accounts - ABM: enroll the contacts of these companies, grouped per account (per-account cap and stop rule from the sequence settings)
+    def post_v1_outbound_sequences_by_id_enroll_accounts(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/sequences/{id}/enroll-accounts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/outbound/sequences/{id}/export-leads - CSV of the sequence's leads with their fields, variables and per-lead stats, built in the background; optional email when ready
+    def post_v1_outbound_sequences_by_id_export_leads(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/sequences/{id}/export-leads', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/outbound/sequences/{id}/launch - Review gate: let held prospects start (the given ones, or every held prospect)
@@ -8425,9 +10435,19 @@ module Hermetica
       request('POST', '/v1/outbound/tasks', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/outbound/tasks/bulk - Assign, snooze, complete or skip many tasks at once
+    def post_v1_outbound_tasks_bulk(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/tasks/bulk', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/outbound/tasks/{id}/assign
     def post_v1_outbound_tasks_by_id_assign(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/outbound/tasks/{id}/assign', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/outbound/tasks/{id}/call - Click-to-call (or voicemail drop) from a call task through the workspace's Twilio; the call is logged on the task when Twilio reports back
+    def post_v1_outbound_tasks_by_id_call(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/tasks/{id}/call', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/outbound/tasks/{id}/complete
@@ -8448,6 +10468,26 @@ module Hermetica
     # POST /v1/outbound/tasks/search - Search tasks with a nested and / or / not filter tree
     def post_v1_outbound_tasks_search(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/outbound/tasks/search', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/outbound/task-types
+    def post_v1_outbound_task_types(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/task-types', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/outbound/voice-clips - Upload an audio clip (multipart field "file"): MP3, M4A, OGG, WAV or WebM up to 5 MB
+    def post_v1_outbound_voice_clips(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/outbound/voice-clips', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/page-sites - Create a website: pages that share a header, footer and menus
+    def post_v1_page_sites(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/page-sites', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/page-sites/{id}/domain/verify - Queue a DNS check (status `checking` until it lands); once verified the domain is added to the proxy routing file (TLS is issued automatical
+    def post_v1_page_sites_by_id_domain_verify(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/page-sites/{id}/domain/verify', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/pipelines/batch - Mixed batch of identify/track/page/screen/group/alias calls; bad calls are rejected by index, the rest land
@@ -8480,6 +10520,11 @@ module Hermetica
       request('POST', '/v1/postal-addresses', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/profile-filters
+    def post_v1_profile_filters(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/profile-filters', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/profiles
     def post_v1_profiles(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/profiles', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -8495,6 +10540,11 @@ module Hermetica
       request('POST', '/v1/profiles/bulk', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/profiles/{id}/ai-commerce-summary - A plain-language read of one customer's buying behaviour (frequency, spend, top products, carts), from their order figures only. Needs AI as
+    def post_v1_profiles_by_id_ai_commerce_summary(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/profiles/{id}/ai-commerce-summary', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/profiles/{id}/archive - Archive a contact: kept with history, never sent to or counted until restored
     def post_v1_profiles_by_id_archive(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/profiles/{id}/archive', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -8503,6 +10553,16 @@ module Hermetica
     # POST /v1/profiles/{id}/consent
     def post_v1_profiles_by_id_consent(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/profiles/{id}/consent', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/profiles/{id}/crm/find - Find this contact in the CRM by email and link it (nothing is created)
+    def post_v1_profiles_by_id_crm_find(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/profiles/{id}/crm/find', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/profiles/{id}/crm/push - Push this contact to the CRM now
+    def post_v1_profiles_by_id_crm_push(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/profiles/{id}/crm/push', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/profiles/{id}/devices - Add a device record by hand (flagged manual)
@@ -8518,6 +10578,11 @@ module Hermetica
     # POST /v1/profiles/{id}/dsar/export
     def post_v1_profiles_by_id_dsar_export(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/profiles/{id}/dsar/export', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/profiles/{id}/files - Attach a file (multipart field "file"; the asset library's types and limits apply)
+    def post_v1_profiles_by_id_files(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/profiles/{id}/files', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/profiles/{id}/files/{key} - Upload a file (multipart field "file": image, PDF or MP4, up to 25 MB) into a profile property of type file; the property then holds the hos
@@ -8548,6 +10613,11 @@ module Hermetica
     # POST /v1/profiles/{id}/suppress - Suppress every address of the profile (or one channel): nothing is sent until an admin or marketer lifts a manual suppression
     def post_v1_profiles_by_id_suppress(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/profiles/{id}/suppress', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/profiles/{id}/suppress-delete - Suppress every address of a contact, delete the contact, and block its identifiers so no import, API call or event can re-create it
+    def post_v1_profiles_by_id_suppress_delete(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/profiles/{id}/suppress-delete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/profiles/{id}/tags
@@ -8598,6 +10668,16 @@ module Hermetica
     # POST /v1/programs/{id}/assets
     def post_v1_programs_by_id_assets(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/programs/{id}/assets', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/push/live - Start a live notification for one contact (order tracking, a match score...). Push consent applies to marketing ones; suppression always app
+    def post_v1_push_live(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/push/live', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/push/live/{id}/end - End the live notification (optionally with a final state and when to dismiss it)
+    def post_v1_push_live_by_id_end(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/push/live/{id}/end', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/push/test-send - Send a push template (with a flow step's extras) to a test profile's devices or one pasted device token, through the normal send checks
@@ -8653,6 +10733,11 @@ module Hermetica
     # POST /v1/reporting/values - Values report for campaigns, workflows, forms or segments: statistics list, timeframe, conversion metric, compare-to-previous
     def post_v1_reporting_values(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/reporting/values', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/review-feeds/google/replace - Revoke every review feed link made so far and return new ones
+    def post_v1_review_feeds_google_replace(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/review-feeds/google/replace', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/reviews - Ingest a review (pending unless status is set); emits review_created for the profile
@@ -8740,9 +10825,19 @@ module Hermetica
       request('POST', '/v1/segments/{id}/evaluate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/segments/{id}/export-jobs - Every current member as a CSV file, prepared in the background (poll GET /v1/exports/:id for the download link)
+    def post_v1_segments_by_id_export_jobs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/segments/{id}/export-jobs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/segments/{id}/match-runs - Match everyone against the segment now and keep the result as a run
     def post_v1_segments_by_id_match_runs(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/segments/{id}/match-runs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/segments/{id}/members - Add existing contacts to a hand-picked segment by profile id or email (grants no consent)
+    def post_v1_segments_by_id_members(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/segments/{id}/members', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/segments/{id}/snapshots
@@ -8810,9 +10905,19 @@ module Hermetica
       request('POST', '/v1/sending-domains/{id}/check', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/shared-object-schemas/{id}/install - Create or update the object type here from a shared schema (fields are merged, none removed)
+    def post_v1_shared_object_schemas_by_id_install(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/shared-object-schemas/{id}/install', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/signals - Record an outside signal for a person (job change, funding...). It arrives as the event external_signal, so journeys and sequences can start
     def post_v1_signals(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/signals', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/site-messages - Create a content-only on-site message (draft)
+    def post_v1_site_messages(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/site-messages', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/sites
@@ -8823,6 +10928,26 @@ module Hermetica
     # POST /v1/sites/{id}/verify - Verified once the snippet has sent a browser event
     def post_v1_sites_by_id_verify(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/sites/{id}/verify', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/slack/installs - Install with your own Slack app's bot token (stored encrypted)
+    def post_v1_slack_installs(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/slack/installs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/slack/oauth/start - Start "Add to Slack"; returns Slack's authorize URL
+    def post_v1_slack_oauth_start(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/slack/oauth/start', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/slack/templates - Create a Slack message template (text plus optional Block Kit blocks)
+    def post_v1_slack_templates(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/slack/templates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/slack/test - Post a test message to a channel. Needs an idempotency key
+    def post_v1_slack_test(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/slack/test', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/sms/ai-drafts - Write a text message from a brief; a draft for a person to review, never sent
@@ -8920,6 +11045,36 @@ module Hermetica
       request('POST', '/v1/snippets/bulk-delete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/social/accounts - Connect with a pasted access token (stored encrypted); connects every page/account it can post as unless externalId is given
+    def post_v1_social_accounts(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/social/accounts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/social/oauth/{platform}/start - Start sign-in with the network; returns its authorize URL
+    def post_v1_social_oauth_by_platform_start(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/social/oauth/{platform}/start', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/social/oauth/pending/{id} - Connect the picked pages and accounts from a sign-in; the others are forgotten
+    def post_v1_social_oauth_pending_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/social/oauth/pending/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/social/posts - Compose a post for one or more accounts: a draft, now, or scheduled. Needs an idempotency key
+    def post_v1_social_posts(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/social/posts', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/social/posts/{id}/cancel - Cancel a draft, scheduled or failed post
+    def post_v1_social_posts_by_id_cancel(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/social/posts/{id}/cancel', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/social/posts/{id}/replies - Reply to a comment as the page or account. Needs an idempotency key
+    def post_v1_social_posts_by_id_replies(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/social/posts/{id}/replies', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/soft-bounce-allowlist - Exempt an address or domain from automatic soft-bounce suppression
     def post_v1_soft_bounce_allowlist(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/soft-bounce-allowlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -8993,6 +11148,21 @@ module Hermetica
     # POST /v1/sponsors/network/marketplace/{id}/decision - Accept or decline a network campaign for a publication
     def post_v1_sponsors_network_marketplace_by_id_decision(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/sponsors/network/marketplace/{id}/decision', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/sql-sources - Add a scheduled SELECT; only SELECT statements are accepted
+    def post_v1_sql_sources(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/sql-sources', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/sql-sources/{id}/preview - Test the connection and query: up to 20 rows, nothing imported
+    def post_v1_sql_sources_by_id_preview(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/sql-sources/{id}/preview', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/sql-sources/{id}/run - Run the pull now (in the background)
+    def post_v1_sql_sources_by_id_run(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/sql-sources/{id}/run', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/sso/saml/{workspaceId}/acs
@@ -9070,6 +11240,11 @@ module Hermetica
       request('POST', '/v1/templates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/templates/bulk-update - Move, tag, re-brand, set the topic of or archive up to 100 templates; each is applied or refused on its own
+    def post_v1_templates_bulk_update(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/templates/bulk-update', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/templates/{id}/archive - Blocked (412) while a scheduled campaign or live workflow uses it, unless force=true
     def post_v1_templates_by_id_archive(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/templates/{id}/archive', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9085,7 +11260,7 @@ module Hermetica
       request('POST', '/v1/templates/{id}/clone', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/templates/{id}/convert - One-way: copy a block template into a new HTML template
+    # POST /v1/templates/{id}/convert - One-way copy into the other format: a block template into a new HTML template, an HTML template into a new drag-and-drop template
     def post_v1_templates_by_id_convert(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/templates/{id}/convert', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -9150,12 +11325,12 @@ module Hermetica
       request('POST', '/v1/templates/{id}/versions/{versionId}/submit', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/templates/github-sync/pull - Read files from the repository: new templates and changed template versions; journeys only ever update drafts, never a published version
+    # POST /v1/templates/github-sync/pull - Read files from the repository: new templates and changed template versions, journey drafts (never a published version) and segments (create
     def post_v1_templates_github_sync_pull(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/templates/github-sync/pull', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # POST /v1/templates/github-sync/push - Write every template and journey to the repository as one JSON file each (unchanged files are skipped)
+    # POST /v1/templates/github-sync/push - Write every template, journey and segment to the repository as one JSON file each (unchanged files are skipped)
     def post_v1_templates_github_sync_push(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/templates/github-sync/push', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -9208,6 +11383,11 @@ module Hermetica
     # POST /v1/transactional/definitions/{id}/send - Send a transactional definition by id: recipients and data in, template and settings from the definition
     def post_v1_transactional_definitions_by_id_send(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/transactional/definitions/{id}/send', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/transactional/metadata-fields
+    def post_v1_transactional_metadata_fields(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/transactional/metadata-fields', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/transactional/parse - Parse a raw MIME message into from, to, subject, text, html, headers and attachment metadata (nothing is stored or sent)
@@ -9305,6 +11485,11 @@ module Hermetica
       request('POST', '/v1/webhooks/journal/exports', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/webhooks/journal/snapshots - Write the current state of listed contacts into the journal as crm.snapshot entries, or freeze a segment and queue its entries for the worke
+    def post_v1_webhooks_journal_snapshots(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/webhooks/journal/snapshots', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/webhook-templates
     def post_v1_webhook_templates(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/webhook-templates', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9318,6 +11503,26 @@ module Hermetica
     # POST /v1/webhook-templates/test - Make a real test call (saved template or ad-hoc), SSRF-guarded, never retried
     def post_v1_webhook_templates_test(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/webhook-templates/test', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/whatsapp/flows - Create a Flow (draft) from its Flow JSON
+    def post_v1_whatsapp_flows(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/whatsapp/flows', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/whatsapp/flows/{id}/deprecate - Deprecate a published Flow at Meta (it can no longer be sent)
+    def post_v1_whatsapp_flows_by_id_deprecate(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/whatsapp/flows/{id}/deprecate', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/whatsapp/flows/{id}/publish - Upload the Flow JSON to Meta and publish it (validation errors are returned on the flow)
+    def post_v1_whatsapp_flows_by_id_publish(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/whatsapp/flows/{id}/publish', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/whatsapp/flows/{id}/run - Send a published Flow to one contact. WhatsApp consent (marketing) and suppression apply; outside the 24-hour window the flow template is us
+    def post_v1_whatsapp_flows_by_id_run(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/whatsapp/flows/{id}/run', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/whatsapp/send - Send one WhatsApp message: an approved template, or free text inside the 24-hour window. Consent, suppression and the window are enforced; n
@@ -9353,6 +11558,11 @@ module Hermetica
     # POST /v1/workflow-actions/callbacks/complete - Finish up to 100 waiting steps at once
     def post_v1_workflow_actions_callbacks_complete(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/workflow-actions/callbacks/complete', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/workflow-custom-types - Register an action type (runs a call template or code action) or a trigger type (fires on an event)
+    def post_v1_workflow_custom_types(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/workflow-custom-types', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/workflows
@@ -9418,6 +11628,11 @@ module Hermetica
     # POST /v1/workflows/{id}/enrollments/exit-all - Remove everyone still inside the journey (or only those at one step); up to 500 per call, `more` says to repeat
     def post_v1_workflows_by_id_enrollments_exit_all(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/workflows/{id}/enrollments/exit-all', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /v1/workflows/{id}/enroll-object-segment - Enroll the people linked to each object in an object segment (the object rides along as the trigger event)
+    def post_v1_workflows_by_id_enroll_object_segment(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/workflows/{id}/enroll-object-segment', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /v1/workflows/{id}/migrate
@@ -9500,6 +11715,11 @@ module Hermetica
       request('POST', '/v1/workspace/dashboard-domain/verify', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /v1/workspaces/current/reset - Owner only: delete the chosen data (contacts, events, messages, campaigns, journeys) and keep settings, members, keys, connections, template
+    def post_v1_workspaces_current_reset(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/v1/workspaces/current/reset', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /v1/workspaces/current/schedule-for-removal - Owner only: stop sending now and erase the workspace after the grace period
     def post_v1_workspaces_current_schedule_for_removal(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v1/workspaces/current/schedule-for-removal', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9518,6 +11738,21 @@ module Hermetica
     # POST /v2/entity - Unified entity call for people and objects: identify, event, page, screen, delete, merge, add/delete relationships
     def post_v2_entity(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/v2/entity', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}
+    def post_wallet_apple_by_ws_v1_devices_by_device_registrations_by_pass_type_by_serial(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/wallet/apple/{ws}/v1/devices/{device}/registrations/{passType}/{serial}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /wallet/apple/{ws}/v1/log
+    def post_wallet_apple_by_ws_v1_log(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/wallet/apple/{ws}/v1/log', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /webhooks/ads/meta/leadgen - Meta leadgen delivery: queues the matching lead form syncs at once
+    def post_webhooks_ads_meta_leadgen(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/webhooks/ads/meta/leadgen', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /webhooks/billing/stripe
@@ -9540,6 +11775,11 @@ module Hermetica
       request('POST', '/webhooks/bounce/{workspaceId}/{connectionId}/generic', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # POST /webhooks/bounce/{workspaceId}/{connectionId}/lettermint - Lettermint webhook (hard/soft bounce, spam complaint, delivered); X-Lettermint-Signature t=<unix>,v1=HMAC-SHA256 of "<t>.<body>" with the co
+    def post_webhooks_bounce_by_workspace_id_by_connection_id_lettermint(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/webhooks/bounce/{workspaceId}/{connectionId}/lettermint', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # POST /webhooks/bounce/{workspaceId}/{connectionId}/sparkpost - SparkPost events receiver; authenticate with the X-MessageSystems-Webhook-Token header (or basic auth) = connection webhook secret
     def post_webhooks_bounce_by_workspace_id_by_connection_id_sparkpost(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/webhooks/bounce/{workspaceId}/{connectionId}/sparkpost', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9558,6 +11798,11 @@ module Hermetica
     # POST /webhooks/integrations/{workspaceId}/{connectionId}
     def post_webhooks_integrations_by_workspace_id_by_connection_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('POST', '/webhooks/integrations/{workspaceId}/{connectionId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # POST /webhooks/outbound-voice/{workspaceId}/{taskId} - Twilio Voice status / dial / answering-machine callback: plays the voicemail clip or bridges the rep, and logs the call on the task
+    def post_webhooks_outbound_voice_by_workspace_id_by_task_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('POST', '/webhooks/outbound-voice/{workspaceId}/{taskId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # POST /webhooks/stripe-memberships/{workspaceId}
@@ -9635,6 +11880,11 @@ module Hermetica
       request('PUT', '/v1/assets/uploads/{id}/chunks/{n}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/associations/{fromType}/{fromId}/{toType}/{toId} - Associate two records; without a label the pair's default label is used (or "related")
+    def put_v1_associations_by_from_type_by_from_id_by_to_type_by_to_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/associations/{fromType}/{fromId}/{toType}/{toId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/attributes/fields/{key}/lists/{listId} - Show this field for people on this list
     def put_v1_attributes_fields_by_key_lists_by_list_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/attributes/fields/{key}/lists/{listId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9653,6 +11903,11 @@ module Hermetica
     # PUT /v1/brand-kits/{id}/voice
     def put_v1_brand_kits_by_id_voice(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/brand-kits/{id}/voice', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/budgets/{id}/folder
+    def put_v1_budgets_by_id_folder(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/budgets/{id}/folder', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/campaign-folders/{id}/assets/{assetType}/{assetId} - File an asset under the folder (moves it if it was in another folder)
@@ -9678,6 +11933,16 @@ module Hermetica
     # PUT /v1/campaigns/{id}/folder
     def put_v1_campaigns_by_id_folder(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/campaigns/{id}/folder', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/campaigns/{id}/messages/{messageId}/variants/{key}
+    def put_v1_campaigns_by_id_messages_by_message_id_variants_by_key(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/campaigns/{id}/messages/{messageId}/variants/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/campaigns/{id}/postcard - Save the postcard design (6x4 or 9x6, HTML front and back with merge tags)
+    def put_v1_campaigns_by_id_postcard(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/campaigns/{id}/postcard', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/campaigns/{id}/push - Set the content of a draft push campaign
@@ -9735,6 +12000,11 @@ module Hermetica
       request('PUT', '/v1/commerce/stores/{storeId}/orders', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/commerce/stores/{storeId}/orders/{id} - Create or replace the order under the store's own order id
+    def put_v1_commerce_stores_by_store_id_orders_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/commerce/stores/{storeId}/orders/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/commerce/stores/{storeId}/products/{productId} - Create or replace a product in this store
     def put_v1_commerce_stores_by_store_id_products_by_product_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/commerce/stores/{storeId}/products/{productId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9748,6 +12018,11 @@ module Hermetica
     # PUT /v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId} - Create or replace a variant of a store product
     def put_v1_commerce_stores_by_store_id_products_by_product_id_variants_by_variant_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/commerce/stores/{storeId}/products/{productId}/variants/{variantId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/compliance/export-retention
+    def put_v1_compliance_export_retention(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/compliance/export-retention', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/compliance/gpc
@@ -9768,6 +12043,11 @@ module Hermetica
     # PUT /v1/compliance/trash-retention
     def put_v1_compliance_trash_retention(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/compliance/trash-retention', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/compliance/unconfirmed-purge
+    def put_v1_compliance_unconfirmed_purge(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/compliance/unconfirmed-purge', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/compliance/unsubscribe-purge - GDPR auto-purge: erase contacts N days after they unsubscribed (their address stays suppressed)
@@ -9805,9 +12085,19 @@ module Hermetica
       request('PUT', '/v1/delivery/settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/embed-api/{token}/journey - Save the journey draft (publish with POST .../journey/publish)
+    def put_v1_embed_api_by_token_journey(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/embed-api/{token}/journey', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/event-definitions/{name}/properties/{prop} - Add or change one declared property type
     def put_v1_event_definitions_by_name_properties_by_prop(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/event-definitions/{name}/properties/{prop}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/events/settings - Turn server-side event ingest on or off (callers get 412 while off, nothing is dropped silently), or set the primary-key field
+    def put_v1_events_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/events/settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/forms/{id} - Replace the draft (name, definition, targeting)
@@ -9825,6 +12115,11 @@ module Hermetica
       request('PUT', '/v1/frequency-settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/integrations/connections/{id}/crm/users
+    def put_v1_integrations_connections_by_id_crm_users(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/integrations/connections/{id}/crm/users', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/integrations/connections/{id}/declarative/push - Turn on sending changed profiles to this CRM/helpdesk (off by default), optionally for one segment
     def put_v1_integrations_connections_by_id_declarative_push(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/integrations/connections/{id}/declarative/push', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9835,9 +12130,19 @@ module Hermetica
       request('PUT', '/v1/integrations/connections/{id}/declarative/webhook-secret', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/integrations/crm-settings - Set how many days the CRM sync log keeps rows (7 to 3650)
+    def put_v1_integrations_crm_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/integrations/crm-settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/integrations/secrets/{name} - Create or replace a secret
     def put_v1_integrations_secrets_by_name(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/integrations/secrets/{name}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/landing-page-clusters/{id}
+    def put_v1_landing_page_clusters_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/landing-page-clusters/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/landing-page-languages - Re-label locales of pages in one group
@@ -9858,6 +12163,16 @@ module Hermetica
     # PUT /v1/landing-pages/{id}/languages/primary - Make this page the group fallback (served at its address by Accept-Language)
     def put_v1_landing_pages_by_id_languages_primary(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/landing-pages/{id}/languages/primary', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/landing-pages/{id}/seo/keyword - Set the focus keyword the audit checks
+    def put_v1_landing_pages_by_id_seo_keyword(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/landing-pages/{id}/seo/keyword', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/landing-pages/{id}/site - Put the page in a website (null takes it out)
+    def put_v1_landing_pages_by_id_site(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/landing-pages/{id}/site', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/leads/settings
@@ -9890,9 +12205,24 @@ module Hermetica
       request('PUT', '/v1/lists/{id}/tags', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/loyalty/hub
+    def put_v1_loyalty_hub(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/loyalty/hub', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/loyalty/programs/{id}/wallet - Set up Apple and Google Wallet passes (secrets are write-only and stored sealed)
+    def put_v1_loyalty_programs_by_id_wallet(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/loyalty/programs/{id}/wallet', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/mapped-metrics/{role}
     def put_v1_mapped_metrics_by_role(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/mapped-metrics/{role}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/marketing-events/apps - Set the event-details URL template of an event app (by name)
+    def put_v1_marketing_events_apps(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/marketing-events/apps', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/marketing-events/{id}/lists/{listId} - Attach a list and register its members
@@ -9945,7 +12275,7 @@ module Hermetica
       request('PUT', '/v1/newsletter/stripe', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
-    # PUT /v1/notes/{id}
+    # PUT /v1/notes/{id} - Edit a contact or company note
     def put_v1_notes_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/notes/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
@@ -9965,6 +12295,11 @@ module Hermetica
       request('PUT', '/v1/outbound/ai-key', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/outbound/booking-pages/{id}
+    def put_v1_outbound_booking_pages_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/outbound/booking-pages/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/outbound/call-dispositions
     def put_v1_outbound_call_dispositions(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/outbound/call-dispositions', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -9978,6 +12313,11 @@ module Hermetica
     # PUT /v1/outbound/inbox/{id}/drafts/{draftId}
     def put_v1_outbound_inbox_by_id_drafts_by_draft_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/outbound/inbox/{id}/drafts/{draftId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/outbound/inbox-routing/{channel} - Default inbox and default assignee for new replies on a channel
+    def put_v1_outbound_inbox_routing_by_channel(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/outbound/inbox-routing/{channel}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/outbound/mailbox-meta/{id}
@@ -10020,6 +12360,36 @@ module Hermetica
       request('PUT', '/v1/outbound/sequences/{id}/tags', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/outbound/task-types/{id}
+    def put_v1_outbound_task_types_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/outbound/task-types/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/outbound/telephony
+    def put_v1_outbound_telephony(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/outbound/telephony', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/outbound/telephony/my-phone
+    def put_v1_outbound_telephony_my_phone(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/outbound/telephony/my-phone', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/page-sites/{id}/domain - Set the custom domain; publish the returned DNS records, then verify
+    def put_v1_page_sites_by_id_domain(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/page-sites/{id}/domain', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/postal-addresses/{id}/groups
+    def put_v1_postal_addresses_by_id_groups(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/postal-addresses/{id}/groups', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/profile-filters/{id}
+    def put_v1_profile_filters_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/profile-filters/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/profiles/{id}/contact-prefs
     def put_v1_profiles_by_id_contact_prefs(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/profiles/{id}/contact-prefs', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -10038,6 +12408,11 @@ module Hermetica
     # PUT /v1/registrar/domains/{id}/forwarding - Replace the email forwarding rules and the apex/www redirects
     def put_v1_registrar_domains_by_id_forwarding(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/registrar/domains/{id}/forwarding', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/review-settings
+    def put_v1_review_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/review-settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/roles/{id}
@@ -10060,14 +12435,34 @@ module Hermetica
       request('PUT', '/v1/seed-lists/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/segments - Create or update by name: the live segment with this name (case-insensitive) gets these rules, else a new one is made
+    def put_v1_segments(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/segments', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/segments/settings - Change spend tiers or the geocoding provider; segments that use them recalculate
     def put_v1_segments_settings(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/segments/settings', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/senders/{id}/signing/pgp - Sign this sender's email with PGP/MIME: an armored private key with a user id for its address, and its passphrase
+    def put_v1_senders_by_id_signing_pgp(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/senders/{id}/signing/pgp', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/senders/{id}/signing/smime - Sign this sender's email with S/MIME: PEM certificate issued for its address, its unencrypted private key, optional chain
+    def put_v1_senders_by_id_signing_smime(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/senders/{id}/signing/smime', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/send-options/{sourceKind}/{sourceId} - Replace the attachments (base64, stored in object storage) and allowlisted headers of a source; reserved headers are rejected
     def put_v1_send_options_by_source_kind_by_source_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/send-options/{sourceKind}/{sourceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/send-options/{sourceKind}/{sourceId}/behaviour - Strict Liquid (null = default strict) and send-from-contact-owner for a campaign, journey or sequence; other send options are untouched
+    def put_v1_send_options_by_source_kind_by_source_id_behaviour(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/send-options/{sourceKind}/{sourceId}/behaviour', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/send-options/{sourceKind}/{sourceId}/footer-address - Choose which saved address prints in the email footer of a campaign, journey or sequence (null = workspace address); attachments and headers
@@ -10098,6 +12493,11 @@ module Hermetica
     # PUT /v1/sites/{id}/allowlist
     def put_v1_sites_by_id_allowlist(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/sites/{id}/allowlist', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/slack/templates/{id} - Edit a Slack message template
+    def put_v1_slack_templates_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/slack/templates/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/sms/ai-drafts/{id} - Write it again from a new brief or tone, replacing this draft
@@ -10145,6 +12545,11 @@ module Hermetica
       request('PUT', '/v1/sso/oidc', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
+    # PUT /v1/standard-fields/{key}
+    def put_v1_standard_fields_by_key(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/standard-fields/{key}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
     # PUT /v1/tags/resources/{resourceType}/{resourceId} - Replace the resource tag set
     def put_v1_tags_resources_by_resource_type_by_resource_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/tags/resources/{resourceType}/{resourceId}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
@@ -10178,6 +12583,11 @@ module Hermetica
     # PUT /v1/user-groups/{id}
     def put_v1_user_groups_by_id(path: nil, query: nil, body: nil, idempotency_key: nil)
       request('PUT', '/v1/user-groups/{id}', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
+    end
+
+    # PUT /v1/user-groups/{id}/access - Lists the group's members may reach (null = the group does not limit lists) and caps such as sends per day
+    def put_v1_user_groups_by_id_access(path: nil, query: nil, body: nil, idempotency_key: nil)
+      request('PUT', '/v1/user-groups/{id}/access', path_params: path, query: query, body: body, idempotency_key: idempotency_key)
     end
 
     # PUT /v1/white-label - Set the white-label look; send null to clear a field
