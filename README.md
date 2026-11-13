@@ -8,7 +8,7 @@ Generated from the Hermetica OpenAPI spec (2524 operations). Ruby 3.0+, standard
 gem install hermeticacomms
 ```
 
-or in a Gemfile: `gem "hermeticacomms", "~> 0.1.0"`.
+or in a Gemfile: `gem "hermeticacomms", "~> 0.4.0"`.
 
 ## Quick start
 
